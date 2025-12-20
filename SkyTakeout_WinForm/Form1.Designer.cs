@@ -1,6 +1,6 @@
 ﻿namespace SkyTakeout_WinForm
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -35,9 +35,9 @@
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.panelCard = new System.Windows.Forms.Panel();
             this.panelBack = new System.Windows.Forms.Panel();
-            this.buttonLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -115,26 +115,6 @@
             this.panelLogin.Size = new System.Drawing.Size(383, 365);
             this.panelLogin.TabIndex = 6;
             // 
-            // panelCard
-            // 
-            this.panelCard.BackColor = System.Drawing.Color.White;
-            this.panelCard.Controls.Add(this.panelLogin);
-            this.panelCard.Controls.Add(this.pictureBoxCard);
-            this.panelCard.Location = new System.Drawing.Point(184, 150);
-            this.panelCard.Name = "panelCard";
-            this.panelCard.Size = new System.Drawing.Size(793, 365);
-            this.panelCard.TabIndex = 8;
-            // 
-            // panelBack
-            // 
-            this.panelBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panelBack.Controls.Add(this.panelCard);
-            this.panelBack.ForeColor = System.Drawing.Color.Black;
-            this.panelBack.Location = new System.Drawing.Point(1, -1);
-            this.panelBack.Name = "panelBack";
-            this.panelBack.Size = new System.Drawing.Size(1168, 670);
-            this.panelBack.TabIndex = 7;
-            // 
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -146,13 +126,33 @@
             this.buttonLogin.Text = "登录";
             this.buttonLogin.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // panelCard
+            // 
+            this.panelCard.BackColor = System.Drawing.Color.White;
+            this.panelCard.Controls.Add(this.panelLogin);
+            this.panelCard.Controls.Add(this.pictureBoxCard);
+            this.panelCard.Location = new System.Drawing.Point(186, 159);
+            this.panelCard.Name = "panelCard";
+            this.panelCard.Size = new System.Drawing.Size(793, 365);
+            this.panelCard.TabIndex = 8;
+            // 
+            // panelBack
+            // 
+            this.panelBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelBack.Controls.Add(this.panelCard);
+            this.panelBack.ForeColor = System.Drawing.Color.Black;
+            this.panelBack.Location = new System.Drawing.Point(-8, -1);
+            this.panelBack.Name = "panelBack";
+            this.panelBack.Size = new System.Drawing.Size(1177, 670);
+            this.panelBack.TabIndex = 7;
+            // 
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1167, 669);
             this.Controls.Add(this.panelBack);
-            this.Name = "Form1";
+            this.Name = "FormLogin";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsername)).EndInit();
