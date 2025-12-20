@@ -1,0 +1,9 @@
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\bin\Debug\SkyTakeout_WinForm.exe.config
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\bin\Debug\SkyTakeout_WinForm.exe
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\bin\Debug\SkyTakeout_WinForm.pdb
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\obj\Debug\SkyTakeout_WinForm.Form1.resources
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\obj\Debug\SkyTakeout_WinForm.Properties.Resources.resources
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\obj\Debug\SkyTakeout_WinForm.csproj.GenerateResource.cache
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\obj\Debug\SkyTakeout_WinForm.exe
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\obj\Debug\SkyTakeout_WinForm.pdb
+D:\temp\SkyTakeout_WinForm\SkyTakeout_WinForm\obj\Debug\SkyTakeout_WinForm.csprojResolveAssemblyReference.cache

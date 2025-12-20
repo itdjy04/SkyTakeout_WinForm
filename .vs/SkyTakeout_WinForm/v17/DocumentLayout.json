@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\temp\\SkyTakeout_WinForm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0DA6D88C-D90D-4E24-A9D6-AA6DBF0D5772}|SkyTakeout_WinForm\\SkyTakeout_WinForm.csproj|d:\\temp\\skytakeout_winform\\skytakeout_winform\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0DA6D88C-D90D-4E24-A9D6-AA6DBF0D5772}|SkyTakeout_WinForm\\SkyTakeout_WinForm.csproj|solutionrelative:skytakeout_winform\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DA6D88C-D90D-4E24-A9D6-AA6DBF0D5772}|SkyTakeout_WinForm\\SkyTakeout_WinForm.csproj|d:\\temp\\skytakeout_winform\\skytakeout_winform\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DA6D88C-D90D-4E24-A9D6-AA6DBF0D5772}|SkyTakeout_WinForm\\SkyTakeout_WinForm.csproj|solutionrelative:skytakeout_winform\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\temp\\SkyTakeout_WinForm\\SkyTakeout_WinForm\\Form1.cs",
+              "RelativeDocumentMoniker": "SkyTakeout_WinForm\\Form1.cs",
+              "ToolTip": "D:\\temp\\SkyTakeout_WinForm\\SkyTakeout_WinForm\\Form1.cs",
+              "RelativeToolTip": "SkyTakeout_WinForm\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T02:40:16.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\temp\\SkyTakeout_WinForm\\SkyTakeout_WinForm\\Form1.cs",
+              "RelativeDocumentMoniker": "SkyTakeout_WinForm\\Form1.cs",
+              "ToolTip": "D:\\temp\\SkyTakeout_WinForm\\SkyTakeout_WinForm\\Form1.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "SkyTakeout_WinForm\\Form1.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T02:21:09.002Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
