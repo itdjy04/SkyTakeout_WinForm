@@ -88,6 +88,12 @@
     <Compile Include="UcDishManage.Designer.cs">
       <DependentUpon>UcDishManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcCategoryManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcCategoryManage.Designer.cs">
+      <DependentUpon>UcCategoryManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcDishManage.resx">
       <DependentUpon>UcDishManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcCategoryManage.resx">
+      <DependentUpon>UcCategoryManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

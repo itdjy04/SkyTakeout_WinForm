@@ -17,22 +17,12 @@ namespace SkyTakeout_WinForm
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelRoot = new System.Windows.Forms.Panel();
             this.panelTable = new System.Windows.Forms.Panel();
             this.dataGridViewDish = new System.Windows.Forms.DataGridView();
-            this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUpdateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colDelete = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.colToggle = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panelPager = new System.Windows.Forms.Panel();
             this.comboBoxPageSize = new System.Windows.Forms.ComboBox();
             this.labelPage = new System.Windows.Forms.Label();
@@ -50,6 +40,16 @@ namespace SkyTakeout_WinForm
             this.labelCategory = new System.Windows.Forms.Label();
             this.textBoxDishName = new System.Windows.Forms.TextBox();
             this.labelDishName = new System.Windows.Forms.Label();
+            this.colSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.colCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUpdateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colDelete = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colToggle = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panelRoot.SuspendLayout();
             this.panelTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDish)).BeginInit();
@@ -89,14 +89,14 @@ namespace SkyTakeout_WinForm
             this.dataGridViewDish.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDish.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridViewDish.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDish.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDish.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewDish.ColumnHeadersHeight = 44;
             this.dataGridViewDish.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewDish.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -110,14 +110,14 @@ namespace SkyTakeout_WinForm
             this.colEdit,
             this.colDelete,
             this.colToggle});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDish.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDish.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewDish.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDish.EnableHeadersVisualStyles = false;
             this.dataGridViewDish.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(245)))));
@@ -126,110 +126,14 @@ namespace SkyTakeout_WinForm
             this.dataGridViewDish.Name = "dataGridViewDish";
             this.dataGridViewDish.RowHeadersVisible = false;
             this.dataGridViewDish.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.dataGridViewDish.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            this.dataGridViewDish.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewDish.RowTemplate.Height = 52;
             this.dataGridViewDish.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDish.Size = new System.Drawing.Size(968, 548);
             this.dataGridViewDish.TabIndex = 0;
             this.dataGridViewDish.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDish_CellContentClick);
             this.dataGridViewDish.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewDish_CellFormatting);
-            // 
-            // colSelect
-            // 
-            this.colSelect.FillWeight = 36F;
-            this.colSelect.HeaderText = "";
-            this.colSelect.MinimumWidth = 36;
-            this.colSelect.Name = "colSelect";
-            this.colSelect.Width = 36;
-            // 
-            // colName
-            // 
-            this.colName.FillWeight = 140F;
-            this.colName.HeaderText = "菜品名称";
-            this.colName.MinimumWidth = 120;
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 140;
-            // 
-            // colImage
-            // 
-            this.colImage.FillWeight = 70F;
-            this.colImage.HeaderText = "图片";
-            this.colImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colImage.MinimumWidth = 60;
-            this.colImage.Name = "colImage";
-            this.colImage.ReadOnly = true;
-            this.colImage.Width = 70;
-            // 
-            // colCategory
-            // 
-            this.colCategory.FillWeight = 120F;
-            this.colCategory.HeaderText = "菜品分类";
-            this.colCategory.MinimumWidth = 100;
-            this.colCategory.Name = "colCategory";
-            this.colCategory.ReadOnly = true;
-            this.colCategory.Width = 120;
-            // 
-            // colPrice
-            // 
-            this.colPrice.FillWeight = 80F;
-            this.colPrice.HeaderText = "售价";
-            this.colPrice.MinimumWidth = 70;
-            this.colPrice.Name = "colPrice";
-            this.colPrice.ReadOnly = true;
-            this.colPrice.Width = 80;
-            // 
-            // colStatus
-            // 
-            this.colStatus.FillWeight = 80F;
-            this.colStatus.HeaderText = "售卖状态";
-            this.colStatus.MinimumWidth = 80;
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Width = 80;
-            // 
-            // colUpdateTime
-            // 
-            this.colUpdateTime.FillWeight = 140F;
-            this.colUpdateTime.HeaderText = "最后操作时间";
-            this.colUpdateTime.MinimumWidth = 140;
-            this.colUpdateTime.Name = "colUpdateTime";
-            this.colUpdateTime.ReadOnly = true;
-            this.colUpdateTime.Width = 160;
-            // 
-            // colEdit
-            // 
-            this.colEdit.FillWeight = 55F;
-            this.colEdit.HeaderText = "操作";
-            this.colEdit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.colEdit.MinimumWidth = 50;
-            this.colEdit.Name = "colEdit";
-            this.colEdit.Text = "修改";
-            this.colEdit.UseColumnTextForLinkValue = true;
-            this.colEdit.Width = 55;
-            // 
-            // colDelete
-            // 
-            this.colDelete.FillWeight = 55F;
-            this.colDelete.HeaderText = "";
-            this.colDelete.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.colDelete.MinimumWidth = 50;
-            this.colDelete.Name = "colDelete";
-            this.colDelete.Text = "删除";
-            this.colDelete.UseColumnTextForLinkValue = true;
-            this.colDelete.Width = 55;
-            // 
-            // colToggle
-            // 
-            this.colToggle.FillWeight = 70F;
-            this.colToggle.HeaderText = "";
-            this.colToggle.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
-            this.colToggle.MinimumWidth = 60;
-            this.colToggle.Name = "colToggle";
-            this.colToggle.Text = "停售";
-            this.colToggle.UseColumnTextForLinkValue = true;
-            this.colToggle.Width = 70;
             // 
             // panelPager
             // 
@@ -342,9 +246,9 @@ namespace SkyTakeout_WinForm
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(164, 14);
+            this.buttonAdd.Location = new System.Drawing.Point(152, 8);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(100, 32);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 40);
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "新增菜品";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -358,9 +262,9 @@ namespace SkyTakeout_WinForm
             this.buttonBatchDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBatchDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.buttonBatchDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
-            this.buttonBatchDelete.Location = new System.Drawing.Point(52, 14);
+            this.buttonBatchDelete.Location = new System.Drawing.Point(46, 8);
             this.buttonBatchDelete.Name = "buttonBatchDelete";
-            this.buttonBatchDelete.Size = new System.Drawing.Size(100, 32);
+            this.buttonBatchDelete.Size = new System.Drawing.Size(100, 40);
             this.buttonBatchDelete.TabIndex = 0;
             this.buttonBatchDelete.Text = "批量删除";
             this.buttonBatchDelete.UseVisualStyleBackColor = false;
@@ -373,9 +277,9 @@ namespace SkyTakeout_WinForm
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(591, 14);
+            this.buttonSearch.Location = new System.Drawing.Point(606, 12);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(80, 32);
+            this.buttonSearch.Size = new System.Drawing.Size(80, 36);
             this.buttonSearch.TabIndex = 6;
             this.buttonSearch.Text = "查询";
             this.buttonSearch.UseVisualStyleBackColor = false;
@@ -450,6 +354,101 @@ namespace SkyTakeout_WinForm
             this.labelDishName.Size = new System.Drawing.Size(86, 24);
             this.labelDishName.TabIndex = 0;
             this.labelDishName.Text = "菜品名称:";
+            // 
+            // colSelect
+            // 
+            this.colSelect.FillWeight = 36F;
+            this.colSelect.HeaderText = "";
+            this.colSelect.MinimumWidth = 36;
+            this.colSelect.Name = "colSelect";
+            this.colSelect.Width = 36;
+            // 
+            // colName
+            // 
+            this.colName.FillWeight = 140F;
+            this.colName.HeaderText = "菜品名称";
+            this.colName.MinimumWidth = 120;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 140;
+            // 
+            // colImage
+            // 
+            this.colImage.FillWeight = 70F;
+            this.colImage.HeaderText = "图片";
+            this.colImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colImage.MinimumWidth = 60;
+            this.colImage.Name = "colImage";
+            this.colImage.ReadOnly = true;
+            this.colImage.Width = 70;
+            // 
+            // colCategory
+            // 
+            this.colCategory.FillWeight = 120F;
+            this.colCategory.HeaderText = "菜品分类";
+            this.colCategory.MinimumWidth = 100;
+            this.colCategory.Name = "colCategory";
+            this.colCategory.ReadOnly = true;
+            this.colCategory.Width = 120;
+            // 
+            // colPrice
+            // 
+            this.colPrice.FillWeight = 80F;
+            this.colPrice.HeaderText = "售价";
+            this.colPrice.MinimumWidth = 70;
+            this.colPrice.Name = "colPrice";
+            this.colPrice.ReadOnly = true;
+            this.colPrice.Width = 80;
+            // 
+            // colStatus
+            // 
+            this.colStatus.FillWeight = 80F;
+            this.colStatus.HeaderText = "售卖状态";
+            this.colStatus.MinimumWidth = 80;
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colUpdateTime
+            // 
+            this.colUpdateTime.FillWeight = 140F;
+            this.colUpdateTime.HeaderText = "最后操作时间";
+            this.colUpdateTime.MinimumWidth = 140;
+            this.colUpdateTime.Name = "colUpdateTime";
+            this.colUpdateTime.ReadOnly = true;
+            this.colUpdateTime.Width = 160;
+            // 
+            // colEdit
+            // 
+            this.colEdit.FillWeight = 55F;
+            this.colEdit.HeaderText = "操作";
+            this.colEdit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.colEdit.MinimumWidth = 50;
+            this.colEdit.Name = "colEdit";
+            this.colEdit.Text = "修改";
+            this.colEdit.UseColumnTextForLinkValue = true;
+            this.colEdit.Width = 55;
+            // 
+            // colDelete
+            // 
+            this.colDelete.FillWeight = 55F;
+            this.colDelete.HeaderText = "";
+            this.colDelete.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.colDelete.MinimumWidth = 50;
+            this.colDelete.Name = "colDelete";
+            this.colDelete.Text = "删除";
+            this.colDelete.UseColumnTextForLinkValue = true;
+            this.colDelete.Width = 55;
+            // 
+            // colToggle
+            // 
+            this.colToggle.FillWeight = 70F;
+            this.colToggle.HeaderText = "";
+            this.colToggle.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
+            this.colToggle.MinimumWidth = 60;
+            this.colToggle.Name = "colToggle";
+            this.colToggle.Text = "停售";
+            this.colToggle.UseColumnTextForLinkValue = true;
+            this.colToggle.Width = 70;
             // 
             // UcDishManage
             // 

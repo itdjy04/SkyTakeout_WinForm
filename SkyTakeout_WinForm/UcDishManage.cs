@@ -19,6 +19,7 @@ namespace SkyTakeout_WinForm
         private int pageSize = 10;
         private int totalCount = 0;
         private bool suppressFilterReload = false;
+        private bool isCategoryChangeSubscribed = false;
 
         public UcDishManage()
         {
@@ -34,12 +35,40 @@ namespace SkyTakeout_WinForm
             buttonNext.Click += buttonNext_Click;
             colToggle.UseColumnTextForLinkValue = false;
             LoadCategoryOptions();
+            if (!isCategoryChangeSubscribed)
+            {
+                FormMain.CategoryChanged += FormMain_CategoryChanged;
+                Disposed += UcDishManage_Disposed;
+                isCategoryChangeSubscribed = true;
+            }
             comboBoxCategory.SelectedIndexChanged += comboBoxCategory_SelectedIndexChanged;
             comboBoxStatus.SelectedIndexChanged += comboBoxStatus_SelectedIndexChanged;
             comboBoxPageSize.SelectedIndexChanged += comboBoxPageSize_SelectedIndexChanged;
             textBoxDishName.KeyDown += textBoxDishName_KeyDown;
             dishColumnMaxLen = QueryDishColumnMaxLen();
             ReloadFromDatabase(true);
+        }
+
+        private void UcDishManage_Disposed(object sender, EventArgs e)
+        {
+            FormMain.CategoryChanged -= FormMain_CategoryChanged;
+            isCategoryChangeSubscribed = false;
+        }
+
+        private void FormMain_CategoryChanged()
+        {
+            if (IsDisposed)
+            {
+                return;
+            }
+
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => LoadCategoryOptions(true)));
+                return;
+            }
+
+            LoadCategoryOptions(true);
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -242,8 +271,10 @@ namespace SkyTakeout_WinForm
             UpdatePager();
         }
 
-        private void LoadCategoryOptions()
+        private void LoadCategoryOptions(bool preserveSelection = false)
         {
+            string prevSelected = preserveSelection ? (comboBoxCategory.SelectedItem as string ?? string.Empty) : string.Empty;
+
             suppressFilterReload = true;
             comboBoxCategory.Items.Clear();
             comboBoxCategory.Items.Add("全部");
@@ -257,7 +288,15 @@ namespace SkyTakeout_WinForm
                 }
             }
 
-            comboBoxCategory.SelectedIndex = 0;
+            if (!string.IsNullOrWhiteSpace(prevSelected))
+            {
+                int idx = comboBoxCategory.FindStringExact(prevSelected);
+                comboBoxCategory.SelectedIndex = idx >= 0 ? idx : 0;
+            }
+            else
+            {
+                comboBoxCategory.SelectedIndex = 0;
+            }
             suppressFilterReload = false;
         }
 
@@ -265,7 +304,16 @@ namespace SkyTakeout_WinForm
         {
             List<string> result = new List<string>();
             using (SqlConnection conn = new SqlConnection(GetConnectionString()))
-            using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT RTRIM([category]) AS c FROM dbo.[dish] WHERE [category] IS NOT NULL ORDER BY c", conn))
+            using (SqlCommand cmd = new SqlCommand(@"
+SELECT
+    RTRIM([name]) AS c
+FROM dbo.[category]
+WHERE
+    [type] = 1
+    AND ([status] IS NULL OR [status] = 1)
+    AND [name] IS NOT NULL
+ORDER BY TRY_CONVERT(int, RTRIM([sort])) ASC, [id] DESC
+", conn))
             {
                 conn.Open();
                 using (SqlDataReader reader = cmd.ExecuteReader())
