@@ -24,12 +24,25 @@ namespace SkyTakeout_WinForm
 
         private void NavigateTo(string pageName)
         {
+            labelContentTitle.Text = pageName;
+
+            panelContentPlaceholderCard.SuspendLayout();
+            panelContentPlaceholderCard.Controls.Clear();
+
             Control page = GetOrCreatePage(pageName);
-            panelContent.SuspendLayout();
-            panelContent.Controls.Clear();
-            page.Dock = DockStyle.Fill;
-            panelContent.Controls.Add(page);
-            panelContent.ResumeLayout();
+            if (page != null)
+            {
+                page.Dock = DockStyle.Fill;
+                panelContentPlaceholderCard.Controls.Add(page);
+            }
+            else
+            {
+                labelContentPlaceholder.Text = "此模块待实现：" + pageName;
+                labelContentPlaceholder.Location = new Point(16, 18);
+                panelContentPlaceholderCard.Controls.Add(labelContentPlaceholder);
+            }
+
+            panelContentPlaceholderCard.ResumeLayout();
             HighlightMenuButton(pageName);
         }
 
@@ -57,34 +70,15 @@ namespace SkyTakeout_WinForm
                 return existing;
             }
 
-            Panel container = new Panel();
-            container.BackColor = Color.Transparent;
+            Control created = null;
 
-            Label title = new Label();
-            title.AutoSize = true;
-            title.Text = pageName;
-            title.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Bold);
-            title.ForeColor = Color.FromArgb(36, 36, 36);
-            title.Location = new Point(6, 6);
+            if (string.Equals(pageName, "工作台", StringComparison.OrdinalIgnoreCase))
+            {
+                created = new UcDashboard();
+            }
 
-            Panel card = new Panel();
-            card.BackColor = Color.White;
-            card.Location = new Point(6, 56);
-            card.Size = new Size(420, 140);
-
-            Label hint = new Label();
-            hint.AutoSize = true;
-            hint.Text = "这里放模块页面内容（UserControl/Panel）";
-            hint.Font = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular);
-            hint.ForeColor = Color.FromArgb(96, 98, 102);
-            hint.Location = new Point(16, 18);
-
-            card.Controls.Add(hint);
-            container.Controls.Add(title);
-            container.Controls.Add(card);
-
-            pages[pageName] = container;
-            return container;
+            pages[pageName] = created;
+            return created;
         }
 
         private void HighlightMenuButton(string pageName)

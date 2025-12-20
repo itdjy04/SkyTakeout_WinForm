@@ -13,6 +13,11 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(MSBuildRuntimeType)' == 'Core' ">
+    <GenerateResourceMSBuildRuntime>CurrentRuntime</GenerateResourceMSBuildRuntime>
+    <GenerateResourceMSBuildArchitecture>CurrentArchitecture</GenerateResourceMSBuildArchitecture>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +49,13 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Resources.Extensions" Condition=" '$(MSBuildRuntimeType)' == 'Core' ">
+      <HintPath>$(NuGetPackageRoot)system.resources.extensions\9.0.0\lib\net462\System.Resources.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(MSBuildRuntimeType)' == 'Core' ">
+    <PackageReference Include="System.Resources.Extensions" Version="9.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -58,6 +70,17 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UcDashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcDashBoard.Designer.cs">
+      <DependentUpon>UcDashBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -66,16 +89,14 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UcDashBoard.resx">
+      <DependentUpon>UcDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +121,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\密码.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已取消.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\已完成.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\待配送.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\待接单.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\全部订单.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\创建透明 icon 图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\对.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\错.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\展开-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\加.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
