@@ -76,6 +76,10 @@ namespace SkyTakeout_WinForm
             {
                 created = new UcDashboard();
             }
+            else if (string.Equals(pageName, "菜品管理", StringComparison.OrdinalIgnoreCase))
+            {
+                created = new UcDishManage();
+            }
 
             pages[pageName] = created;
             return created;

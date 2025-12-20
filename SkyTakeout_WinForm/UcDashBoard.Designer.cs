@@ -197,7 +197,7 @@ namespace SkyTakeout_WinForm
             // 
             this.label已取消.AutoSize = true;
             this.label已取消.BackColor = System.Drawing.Color.NavajoWhite;
-            this.label已取消.Location = new System.Drawing.Point(62, 50);
+            this.label已取消.Location = new System.Drawing.Point(70, 50);
             this.label已取消.Name = "label已取消";
             this.label已取消.Size = new System.Drawing.Size(62, 18);
             this.label已取消.TabIndex = 17;
@@ -607,9 +607,9 @@ namespace SkyTakeout_WinForm
             // 
             this.pictureBox已取消.BackColor = System.Drawing.Color.NavajoWhite;
             this.pictureBox已取消.Image = global::SkyTakeout_WinForm.Properties.Resources.已取消;
-            this.pictureBox已取消.Location = new System.Drawing.Point(6, 30);
+            this.pictureBox已取消.Location = new System.Drawing.Point(3, 13);
             this.pictureBox已取消.Name = "pictureBox已取消";
-            this.pictureBox已取消.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox已取消.Size = new System.Drawing.Size(67, 84);
             this.pictureBox已取消.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox已取消.TabIndex = 11;
             this.pictureBox已取消.TabStop = false;
