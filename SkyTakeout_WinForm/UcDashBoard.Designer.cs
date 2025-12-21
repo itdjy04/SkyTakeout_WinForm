@@ -520,7 +520,7 @@ namespace SkyTakeout_WinForm
             this.label套餐管理.Name = "label套餐管理";
             this.label套餐管理.Size = new System.Drawing.Size(106, 24);
             this.label套餐管理.TabIndex = 20;
-            this.label套餐管理.Text = "菜品管理";
+            this.label套餐管理.Text = "套餐管理";
             // 
             // pictureBox套餐管理
             // 
@@ -682,7 +682,7 @@ namespace SkyTakeout_WinForm
             this.label订单明细.Name = "label订单明细";
             this.label订单明细.Size = new System.Drawing.Size(106, 24);
             this.label订单明细.TabIndex = 25;
-            this.label订单明细.Text = "菜品管理";
+            this.label订单明细.Text = "订单明细";
             // 
             // pictureBox订单明细
             // 

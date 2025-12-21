@@ -196,7 +196,11 @@ WHERE [id] = @id AND RTRIM([password]) = @oldPwd
             {
                 created = new UcCategoryManage(currentUserId);
             }
-
+            else if (string.Equals(pageName, "套餐管理", StringComparison.OrdinalIgnoreCase))
+            {
+                created = new UcSetmealManage(currentUserId);
+            }
+            
             pages[pageName] = created;
             return created;
         }

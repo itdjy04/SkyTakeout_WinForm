@@ -96,6 +96,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UcSetmealManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSetmealManage.Designer.cs">
+      <DependentUpon>UcSetmealManage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcCategoryManage.resx">
       <DependentUpon>UcCategoryManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSetmealManage.resx">
+      <DependentUpon>UcSetmealManage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
