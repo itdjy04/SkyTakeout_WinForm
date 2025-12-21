@@ -200,6 +200,10 @@ WHERE [id] = @id AND RTRIM([password]) = @oldPwd
             {
                 created = new UcSetmealManage(currentUserId);
             }
+            else if (string.Equals(pageName, "员工管理", StringComparison.OrdinalIgnoreCase))
+            {
+                created = new UcEmployeeManage(currentUserId);
+            }
             
             pages[pageName] = created;
             return created;

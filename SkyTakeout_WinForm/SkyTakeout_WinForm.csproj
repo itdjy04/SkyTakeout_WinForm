@@ -108,6 +108,18 @@
     <Compile Include="UcSetmealEdit.Designer.cs">
       <DependentUpon>UcSetmealEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcEmployeeManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcEmployeeManage.Designer.cs">
+      <DependentUpon>UcEmployeeManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcEmployeeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcEmployeeEdit.Designer.cs">
+      <DependentUpon>UcEmployeeEdit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcSetmealEdit.resx">
       <DependentUpon>UcSetmealEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcEmployeeManage.resx">
+      <DependentUpon>UcEmployeeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcEmployeeEdit.resx">
+      <DependentUpon>UcEmployeeEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
