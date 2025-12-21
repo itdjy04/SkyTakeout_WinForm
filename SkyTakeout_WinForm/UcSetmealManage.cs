@@ -19,6 +19,8 @@ namespace SkyTakeout_WinForm
         private int totalCount = 0;
         private bool suppressFilterReload = false;
         private bool isCategoryChangeSubscribed = false;
+        private UcSetmealEdit editPage;
+        private long? editingSetmealId;
 
         public UcSetmealManage(int userId)
         {
@@ -53,6 +55,179 @@ namespace SkyTakeout_WinForm
             ReloadFromDatabase(true);
         }
 
+        private void EnsureEditPage()
+        {
+            if (editPage != null)
+            {
+                return;
+            }
+
+            editPage = new UcSetmealEdit();
+            editPage.Visible = false;
+            editPage.CancelRequested += () => ShowListPage(false);
+            editPage.SaveRequested += EditPage_SaveRequested;
+            Controls.Add(editPage);
+            editPage.BringToFront();
+        }
+
+        private void ShowAddPage()
+        {
+            EnsureEditPage();
+            editingSetmealId = null;
+            List<SetmealOptionItem> categories = QuerySetmealCategoryOptionsForEdit();
+            List<SkyTakeout_WinForm.DishOption> dishes = QueryDishOptionsForEdit();
+            editPage.EnterAddMode(categories, dishes, true);
+            panelRoot.Visible = false;
+            editPage.Visible = true;
+            editPage.BringToFront();
+        }
+
+        private void ShowEditPage(SetmealRow row)
+        {
+            if (row == null)
+            {
+                return;
+            }
+
+            EnsureEditPage();
+            editingSetmealId = row.Id;
+
+            List<SetmealOptionItem> categories = QuerySetmealCategoryOptionsForEdit();
+            List<SkyTakeout_WinForm.DishOption> dishes = QueryDishOptionsForEdit();
+            List<SkyTakeout_WinForm.SetmealDishItem> setmealDishes = QuerySetmealDishesForEdit(row.Id);
+            SkyTakeout_WinForm.SetmealEditModel model = new SkyTakeout_WinForm.SetmealEditModel(row.Id, row.Name, row.CategoryId, row.PriceValue, row.Enabled ? 1 : 0, row.Description, row.ImagePath, setmealDishes);
+
+            editPage.EnterEditMode(model, categories, dishes);
+            panelRoot.Visible = false;
+            editPage.Visible = true;
+            editPage.BringToFront();
+        }
+
+        private void ShowListPage(bool reload)
+        {
+            editingSetmealId = null;
+            if (editPage != null)
+            {
+                editPage.Visible = false;
+            }
+
+            panelRoot.Visible = true;
+            panelRoot.BringToFront();
+
+            if (reload)
+            {
+                ReloadFromDatabase(false);
+            }
+        }
+
+        private void EditPage_SaveRequested(SkyTakeout_WinForm.SetmealEditResult result)
+        {
+            try
+            {
+                if (result == null)
+                {
+                    return;
+                }
+
+                List<SetmealDishItem> dishes = MapToLocalDishes(result.Dishes);
+
+                if (editingSetmealId.HasValue)
+                {
+                    UpdateSetmeal(editingSetmealId.Value, result.Name, result.CategoryId, result.Price, result.Status, result.Description, result.ImagePath, dishes);
+                    ShowListPage(true);
+                    return;
+                }
+
+                InsertSetmeal(result.Name, result.CategoryId, result.Price, result.Status, result.Description, result.ImagePath, dishes);
+
+                if (result.SaveAndContinue)
+                {
+                    List<SetmealOptionItem> categories = QuerySetmealCategoryOptionsForEdit();
+                    List<SkyTakeout_WinForm.DishOption> dishOptions = QueryDishOptionsForEdit();
+                    editPage.EnterAddMode(categories, dishOptions, true);
+                    return;
+                }
+
+                ShowListPage(true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RefreshEditPageCategoryOptions()
+        {
+            if (editPage == null || !editPage.Visible)
+            {
+                return;
+            }
+
+            List<SetmealOptionItem> categories = QuerySetmealCategoryOptionsForEdit();
+            editPage.UpdateCategoryOptions(categories, true);
+        }
+
+        private static List<SetmealDishItem> MapToLocalDishes(List<SkyTakeout_WinForm.SetmealDishItem> dishes)
+        {
+            List<SetmealDishItem> result = new List<SetmealDishItem>();
+            if (dishes == null)
+            {
+                return result;
+            }
+
+            for (int i = 0; i < dishes.Count; i++)
+            {
+                SkyTakeout_WinForm.SetmealDishItem d = dishes[i];
+                if (d == null)
+                {
+                    continue;
+                }
+                result.Add(new SetmealDishItem(d.DishId, d.Name, d.Price, d.Copies));
+            }
+
+            return result;
+        }
+
+        private List<SetmealOptionItem> QuerySetmealCategoryOptionsForEdit()
+        {
+            List<SetmealOptionItem> result = new List<SetmealOptionItem>();
+            result.Add(new SetmealOptionItem("请选择", 0));
+            List<ComboItem> options = QuerySetmealCategoryOptions();
+            for (int i = 0; i < options.Count; i++)
+            {
+                ComboItem it = options[i];
+                if (it != null && it.Value > 0)
+                {
+                    result.Add(new SetmealOptionItem(it.Text, it.Value));
+                }
+            }
+            return result;
+        }
+
+        private List<SkyTakeout_WinForm.DishOption> QueryDishOptionsForEdit()
+        {
+            List<SkyTakeout_WinForm.DishOption> result = new List<SkyTakeout_WinForm.DishOption>();
+            List<DishOption> local = QueryDishOptions();
+            for (int i = 0; i < local.Count; i++)
+            {
+                DishOption d = local[i];
+                result.Add(new SkyTakeout_WinForm.DishOption(d.Id, d.Name, d.Price));
+            }
+            return result;
+        }
+
+        private List<SkyTakeout_WinForm.SetmealDishItem> QuerySetmealDishesForEdit(long setmealId)
+        {
+            List<SkyTakeout_WinForm.SetmealDishItem> result = new List<SkyTakeout_WinForm.SetmealDishItem>();
+            List<SetmealDishItem> local = QuerySetmealDishes(setmealId);
+            for (int i = 0; i < local.Count; i++)
+            {
+                SetmealDishItem d = local[i];
+                result.Add(new SkyTakeout_WinForm.SetmealDishItem(d.DishId, d.Name, d.Price, d.Copies));
+            }
+            return result;
+        }
+
         private void UcSetmealManage_Disposed(object sender, EventArgs e)
         {
             FormMain.CategoryChanged -= FormMain_CategoryChanged;
@@ -68,11 +243,16 @@ namespace SkyTakeout_WinForm
 
             if (InvokeRequired)
             {
-                BeginInvoke(new Action(() => LoadCategoryOptions(true)));
+                BeginInvoke(new Action(() =>
+                {
+                    LoadCategoryOptions(true);
+                    RefreshEditPageCategoryOptions();
+                }));
                 return;
             }
 
             LoadCategoryOptions(true);
+            RefreshEditPageCategoryOptions();
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,19 +301,7 @@ namespace SkyTakeout_WinForm
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            List<ComboItem> categoryOptions = QuerySetmealCategoryOptions();
-            List<DishOption> dishOptions = QueryDishOptions();
-
-            using (SetmealEditForm form = new SetmealEditForm("新增套餐", categoryOptions, dishOptions, null))
-            {
-                if (form.ShowDialog(this) != DialogResult.OK)
-                {
-                    return;
-                }
-
-                InsertSetmeal(form.SetmealName, form.CategoryId, form.Price, form.Status, form.DescriptionText, form.ImagePath, form.Dishes);
-                ReloadFromDatabase(true);
-            }
+            ShowAddPage();
         }
 
         private void buttonBatchDelete_Click(object sender, EventArgs e)
@@ -206,22 +374,7 @@ namespace SkyTakeout_WinForm
 
             if (e.ColumnIndex == colEdit.Index)
             {
-                List<ComboItem> categoryOptions = QuerySetmealCategoryOptions();
-                List<DishOption> dishOptions = QueryDishOptions();
-                List<SetmealDishItem> dishes = QuerySetmealDishes(model.Id);
-
-                SetmealEditModel editModel = new SetmealEditModel(model.Id, model.Name, model.CategoryId, model.PriceValue, model.Enabled ? 1 : 0, model.Description, model.ImagePath, dishes);
-
-                using (SetmealEditForm form = new SetmealEditForm("修改套餐", categoryOptions, dishOptions, editModel))
-                {
-                    if (form.ShowDialog(this) != DialogResult.OK)
-                    {
-                        return;
-                    }
-
-                    UpdateSetmeal(model.Id, form.SetmealName, form.CategoryId, form.Price, form.Status, form.DescriptionText, form.ImagePath, form.Dishes);
-                    ReloadFromDatabase(false);
-                }
+                ShowEditPage(model);
                 return;
             }
 
