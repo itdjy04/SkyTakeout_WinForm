@@ -18,6 +18,7 @@ namespace SkyTakeout_WinForm
         public FormLogin()
         {
             InitializeComponent();
+            AppIcon.Apply(this);
             Load += (s, e) => ApplyRoundedCorners();
             panelCard.SizeChanged += (s, e) => ApplyRoundedCorners();
             buttonLogin.SizeChanged += (s, e) => ApplyRoundedCorners();

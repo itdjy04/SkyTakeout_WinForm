@@ -18,9 +18,6 @@ namespace SkyTakeout_WinForm
         private void InitializeComponent()
         {
             this.panelRoot = new System.Windows.Forms.Panel();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.labelPageTitle = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelButtons = new System.Windows.Forms.Panel();
             this.buttonSaveContinue = new System.Windows.Forms.Button();
@@ -38,11 +35,14 @@ namespace SkyTakeout_WinForm
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.labelUsername = new System.Windows.Forms.Label();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.labelPageTitle = new System.Windows.Forms.Label();
             this.panelRoot.SuspendLayout();
-            this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.panelForm.SuspendLayout();
+            this.panelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelRoot
@@ -54,40 +54,8 @@ namespace SkyTakeout_WinForm
             this.panelRoot.Location = new System.Drawing.Point(0, 0);
             this.panelRoot.Name = "panelRoot";
             this.panelRoot.Padding = new System.Windows.Forms.Padding(16);
-            this.panelRoot.Size = new System.Drawing.Size(1191, 742);
+            this.panelRoot.Size = new System.Drawing.Size(1191, 778);
             this.panelRoot.TabIndex = 0;
-            // 
-            // panelHeader
-            // 
-            this.panelHeader.Controls.Add(this.buttonBack);
-            this.panelHeader.Controls.Add(this.labelPageTitle);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(16, 16);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1159, 48);
-            this.panelHeader.TabIndex = 0;
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.FlatAppearance.BorderSize = 0;
-            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBack.Location = new System.Drawing.Point(0, 8);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(60, 32);
-            this.buttonBack.TabIndex = 0;
-            this.buttonBack.Text = "返回";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            // 
-            // labelPageTitle
-            // 
-            this.labelPageTitle.AutoSize = true;
-            this.labelPageTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.labelPageTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.labelPageTitle.Location = new System.Drawing.Point(70, 10);
-            this.labelPageTitle.Name = "labelPageTitle";
-            this.labelPageTitle.Size = new System.Drawing.Size(102, 30);
-            this.labelPageTitle.TabIndex = 1;
-            this.labelPageTitle.Text = "添加员工";
             // 
             // panelContent
             // 
@@ -96,7 +64,7 @@ namespace SkyTakeout_WinForm
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(16, 64);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1159, 662);
+            this.panelContent.Size = new System.Drawing.Size(1159, 698);
             this.panelContent.TabIndex = 1;
             // 
             // panelButtons
@@ -105,7 +73,7 @@ namespace SkyTakeout_WinForm
             this.panelButtons.Controls.Add(this.buttonSave);
             this.panelButtons.Controls.Add(this.buttonCancel);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 610);
+            this.panelButtons.Location = new System.Drawing.Point(0, 646);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(1159, 52);
             this.panelButtons.TabIndex = 1;
@@ -162,7 +130,7 @@ namespace SkyTakeout_WinForm
             this.panelForm.Location = new System.Drawing.Point(0, 0);
             this.panelForm.Name = "panelForm";
             this.panelForm.Padding = new System.Windows.Forms.Padding(8);
-            this.panelForm.Size = new System.Drawing.Size(1159, 610);
+            this.panelForm.Size = new System.Drawing.Size(1159, 698);
             this.panelForm.TabIndex = 0;
             // 
             // textBoxIdNumber
@@ -179,7 +147,7 @@ namespace SkyTakeout_WinForm
             this.labelIdNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
             this.labelIdNumber.Location = new System.Drawing.Point(12, 190);
             this.labelIdNumber.Name = "labelIdNumber";
-            this.labelIdNumber.Size = new System.Drawing.Size(98, 24);
+            this.labelIdNumber.Size = new System.Drawing.Size(86, 24);
             this.labelIdNumber.TabIndex = 10;
             this.labelIdNumber.Text = "身份证号:";
             // 
@@ -212,7 +180,7 @@ namespace SkyTakeout_WinForm
             this.labelSex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
             this.labelSex.Location = new System.Drawing.Point(12, 146);
             this.labelSex.Name = "labelSex";
-            this.labelSex.Size = new System.Drawing.Size(62, 24);
+            this.labelSex.Size = new System.Drawing.Size(50, 24);
             this.labelSex.TabIndex = 7;
             this.labelSex.Text = "性别:";
             // 
@@ -230,7 +198,7 @@ namespace SkyTakeout_WinForm
             this.labelPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
             this.labelPhone.Location = new System.Drawing.Point(12, 108);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(62, 24);
+            this.labelPhone.Size = new System.Drawing.Size(50, 24);
             this.labelPhone.TabIndex = 5;
             this.labelPhone.Text = "手机:";
             // 
@@ -248,7 +216,7 @@ namespace SkyTakeout_WinForm
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
             this.labelName.Location = new System.Drawing.Point(12, 66);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(98, 24);
+            this.labelName.Size = new System.Drawing.Size(86, 24);
             this.labelName.TabIndex = 3;
             this.labelName.Text = "员工姓名:";
             // 
@@ -266,9 +234,41 @@ namespace SkyTakeout_WinForm
             this.labelUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(98)))), ((int)(((byte)(102)))));
             this.labelUsername.Location = new System.Drawing.Point(12, 24);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(62, 24);
+            this.labelUsername.Size = new System.Drawing.Size(50, 24);
             this.labelUsername.TabIndex = 1;
             this.labelUsername.Text = "账号:";
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Controls.Add(this.buttonBack);
+            this.panelHeader.Controls.Add(this.labelPageTitle);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(16, 16);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1159, 48);
+            this.panelHeader.TabIndex = 0;
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.FlatAppearance.BorderSize = 0;
+            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack.Location = new System.Drawing.Point(0, 8);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(60, 32);
+            this.buttonBack.TabIndex = 0;
+            this.buttonBack.Text = "返回";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            // 
+            // labelPageTitle
+            // 
+            this.labelPageTitle.AutoSize = true;
+            this.labelPageTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
+            this.labelPageTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
+            this.labelPageTitle.Location = new System.Drawing.Point(70, 10);
+            this.labelPageTitle.Name = "labelPageTitle";
+            this.labelPageTitle.Size = new System.Drawing.Size(101, 30);
+            this.labelPageTitle.TabIndex = 1;
+            this.labelPageTitle.Text = "添加员工";
             // 
             // UcEmployeeEdit
             // 
@@ -277,14 +277,14 @@ namespace SkyTakeout_WinForm
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panelRoot);
             this.Name = "UcEmployeeEdit";
-            this.Size = new System.Drawing.Size(1191, 742);
+            this.Size = new System.Drawing.Size(1191, 778);
             this.panelRoot.ResumeLayout(false);
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
             this.panelContent.ResumeLayout(false);
             this.panelButtons.ResumeLayout(false);
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
 
         }

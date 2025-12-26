@@ -8,3 +8,5 @@
 *.user
 *.userosscache
 *.sln.docstates
+
+/项目实训/

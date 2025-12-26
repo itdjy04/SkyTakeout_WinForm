@@ -29,6 +29,7 @@ namespace SkyTakeout_WinForm
         private void InitializeComponent()
         {
             this.panel订单管理 = new System.Windows.Forms.Panel();
+            this.label订单明细 = new System.Windows.Forms.Label();
             this.panel全部订单 = new System.Windows.Forms.Panel();
             this.label全部订单Number = new System.Windows.Forms.Label();
             this.label全部订单 = new System.Windows.Forms.Label();
@@ -47,58 +48,57 @@ namespace SkyTakeout_WinForm
             this.label订单管理 = new System.Windows.Forms.Label();
             this.label菜品总览 = new System.Windows.Forms.Label();
             this.panel菜品总览_已起售 = new System.Windows.Forms.Panel();
-            this.panel菜品总览_已停售 = new System.Windows.Forms.Panel();
-            this.panel菜品总览_新增菜品 = new System.Windows.Forms.Panel();
-            this.panel菜品总览 = new System.Windows.Forms.Panel();
-            this.panel套餐总览 = new System.Windows.Forms.Panel();
-            this.label套餐总览 = new System.Windows.Forms.Label();
-            this.label菜品总览_已起售 = new System.Windows.Forms.Label();
             this.label菜品总览_已起售Number = new System.Windows.Forms.Label();
-            this.label菜品总览_已停售 = new System.Windows.Forms.Label();
+            this.label菜品总览_已起售 = new System.Windows.Forms.Label();
+            this.panel菜品总览_已停售 = new System.Windows.Forms.Panel();
             this.label菜品总览_已停售Number = new System.Windows.Forms.Label();
+            this.label菜品总览_已停售 = new System.Windows.Forms.Label();
+            this.panel菜品总览_新增菜品 = new System.Windows.Forms.Panel();
+            this.label新增菜品 = new System.Windows.Forms.Label();
+            this.panel菜品总览 = new System.Windows.Forms.Panel();
             this.label菜品管理 = new System.Windows.Forms.Label();
+            this.panel套餐总览 = new System.Windows.Forms.Panel();
+            this.label套餐管理 = new System.Windows.Forms.Label();
             this.panel套餐总览_已启售 = new System.Windows.Forms.Panel();
             this.label套餐总览_已启售Number = new System.Windows.Forms.Label();
             this.label套餐总览_已启售 = new System.Windows.Forms.Label();
+            this.panel套餐总览_新增套餐 = new System.Windows.Forms.Panel();
+            this.label新增套餐 = new System.Windows.Forms.Label();
             this.panel套餐总览_已停售 = new System.Windows.Forms.Panel();
             this.label套餐总览_已停售Number = new System.Windows.Forms.Label();
             this.label套餐总览_已停售 = new System.Windows.Forms.Label();
-            this.panel套餐总览_新增套餐 = new System.Windows.Forms.Panel();
-            this.label套餐管理 = new System.Windows.Forms.Label();
+            this.label套餐总览 = new System.Windows.Forms.Label();
+            this.panel今日数据 = new System.Windows.Forms.Panel();
+            this.panel新增用户 = new System.Windows.Forms.Panel();
+            this.label新增用户Number = new System.Windows.Forms.Label();
+            this.label新增用户 = new System.Windows.Forms.Label();
+            this.panel平均客单价 = new System.Windows.Forms.Panel();
+            this.label平均客单价Number = new System.Windows.Forms.Label();
+            this.label平均客单价 = new System.Windows.Forms.Label();
+            this.panel有效订单 = new System.Windows.Forms.Panel();
+            this.label有效订单Number = new System.Windows.Forms.Label();
+            this.label有效订单 = new System.Windows.Forms.Label();
+            this.panel订单完成率 = new System.Windows.Forms.Panel();
+            this.label订单完成率Number = new System.Windows.Forms.Label();
+            this.label订单完成率 = new System.Windows.Forms.Label();
+            this.panel营业额 = new System.Windows.Forms.Panel();
+            this.label营业额Number = new System.Windows.Forms.Label();
+            this.label营业额 = new System.Windows.Forms.Label();
+            this.label今日数据 = new System.Windows.Forms.Label();
             this.pictureBox套餐管理 = new System.Windows.Forms.PictureBox();
             this.pictureBox套餐总览_已启售 = new System.Windows.Forms.PictureBox();
+            this.pictureBox新增套餐 = new System.Windows.Forms.PictureBox();
             this.pictureBox套餐总览_已停售 = new System.Windows.Forms.PictureBox();
             this.pictureBox菜品总览_已起售 = new System.Windows.Forms.PictureBox();
+            this.pictureBox新增菜品 = new System.Windows.Forms.PictureBox();
             this.pictureBox菜品总览_已停售 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox菜品管理 = new System.Windows.Forms.PictureBox();
+            this.pictureBox订单明细 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox已取消 = new System.Windows.Forms.PictureBox();
             this.pictureBox已完成 = new System.Windows.Forms.PictureBox();
             this.pictureBox待派送 = new System.Windows.Forms.PictureBox();
             this.pictureBox待接单 = new System.Windows.Forms.PictureBox();
-            this.label新增菜品 = new System.Windows.Forms.Label();
-            this.label新增套餐 = new System.Windows.Forms.Label();
-            this.pictureBox新增套餐 = new System.Windows.Forms.PictureBox();
-            this.label订单明细 = new System.Windows.Forms.Label();
-            this.pictureBox订单明细 = new System.Windows.Forms.PictureBox();
-            this.panel今日数据 = new System.Windows.Forms.Panel();
-            this.label今日数据 = new System.Windows.Forms.Label();
-            this.panel营业额 = new System.Windows.Forms.Panel();
-            this.label营业额Number = new System.Windows.Forms.Label();
-            this.label营业额 = new System.Windows.Forms.Label();
-            this.panel订单完成率 = new System.Windows.Forms.Panel();
-            this.label订单完成率Number = new System.Windows.Forms.Label();
-            this.label订单完成率 = new System.Windows.Forms.Label();
-            this.panel有效订单 = new System.Windows.Forms.Panel();
-            this.label有效订单Number = new System.Windows.Forms.Label();
-            this.label有效订单 = new System.Windows.Forms.Label();
-            this.panel平均客单价 = new System.Windows.Forms.Panel();
-            this.label平均客单价Number = new System.Windows.Forms.Label();
-            this.label平均客单价 = new System.Windows.Forms.Label();
-            this.panel新增用户 = new System.Windows.Forms.Panel();
-            this.label新增用户Number = new System.Windows.Forms.Label();
-            this.label新增用户 = new System.Windows.Forms.Label();
             this.panel订单管理.SuspendLayout();
             this.panel全部订单.SuspendLayout();
             this.panel已取消.SuspendLayout();
@@ -111,28 +111,28 @@ namespace SkyTakeout_WinForm
             this.panel菜品总览.SuspendLayout();
             this.panel套餐总览.SuspendLayout();
             this.panel套餐总览_已启售.SuspendLayout();
-            this.panel套餐总览_已停售.SuspendLayout();
             this.panel套餐总览_新增套餐.SuspendLayout();
+            this.panel套餐总览_已停售.SuspendLayout();
+            this.panel今日数据.SuspendLayout();
+            this.panel新增用户.SuspendLayout();
+            this.panel平均客单价.SuspendLayout();
+            this.panel有效订单.SuspendLayout();
+            this.panel订单完成率.SuspendLayout();
+            this.panel营业额.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox套餐管理)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox套餐总览_已启售)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox新增套餐)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox套餐总览_已停售)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox菜品总览_已起售)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox新增菜品)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox菜品总览_已停售)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox菜品管理)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox订单明细)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox已取消)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox已完成)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox待派送)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox待接单)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox新增套餐)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox订单明细)).BeginInit();
-            this.panel今日数据.SuspendLayout();
-            this.panel营业额.SuspendLayout();
-            this.panel订单完成率.SuspendLayout();
-            this.panel有效订单.SuspendLayout();
-            this.panel平均客单价.SuspendLayout();
-            this.panel新增用户.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel订单管理
@@ -150,6 +150,16 @@ namespace SkyTakeout_WinForm
             this.panel订单管理.Name = "panel订单管理";
             this.panel订单管理.Size = new System.Drawing.Size(1352, 220);
             this.panel订单管理.TabIndex = 0;
+            // 
+            // label订单明细
+            // 
+            this.label订单明细.AutoSize = true;
+            this.label订单明细.Font = new System.Drawing.Font("宋体", 12F);
+            this.label订单明细.Location = new System.Drawing.Point(1179, 23);
+            this.label订单明细.Name = "label订单明细";
+            this.label订单明细.Size = new System.Drawing.Size(106, 24);
+            this.label订单明细.TabIndex = 25;
+            this.label订单明细.Text = "订单明细";
             // 
             // panel全部订单
             // 
@@ -338,6 +348,24 @@ namespace SkyTakeout_WinForm
             this.panel菜品总览_已起售.Size = new System.Drawing.Size(221, 100);
             this.panel菜品总览_已起售.TabIndex = 5;
             // 
+            // label菜品总览_已起售Number
+            // 
+            this.label菜品总览_已起售Number.AutoSize = true;
+            this.label菜品总览_已起售Number.Location = new System.Drawing.Point(188, 55);
+            this.label菜品总览_已起售Number.Name = "label菜品总览_已起售Number";
+            this.label菜品总览_已起售Number.Size = new System.Drawing.Size(17, 18);
+            this.label菜品总览_已起售Number.TabIndex = 2;
+            this.label菜品总览_已起售Number.Text = "0";
+            // 
+            // label菜品总览_已起售
+            // 
+            this.label菜品总览_已起售.AutoSize = true;
+            this.label菜品总览_已起售.Location = new System.Drawing.Point(74, 55);
+            this.label菜品总览_已起售.Name = "label菜品总览_已起售";
+            this.label菜品总览_已起售.Size = new System.Drawing.Size(62, 18);
+            this.label菜品总览_已起售.TabIndex = 1;
+            this.label菜品总览_已起售.Text = "已启售";
+            // 
             // panel菜品总览_已停售
             // 
             this.panel菜品总览_已停售.BackColor = System.Drawing.Color.NavajoWhite;
@@ -349,15 +377,42 @@ namespace SkyTakeout_WinForm
             this.panel菜品总览_已停售.Size = new System.Drawing.Size(221, 100);
             this.panel菜品总览_已停售.TabIndex = 6;
             // 
+            // label菜品总览_已停售Number
+            // 
+            this.label菜品总览_已停售Number.AutoSize = true;
+            this.label菜品总览_已停售Number.Location = new System.Drawing.Point(184, 57);
+            this.label菜品总览_已停售Number.Name = "label菜品总览_已停售Number";
+            this.label菜品总览_已停售Number.Size = new System.Drawing.Size(17, 18);
+            this.label菜品总览_已停售Number.TabIndex = 2;
+            this.label菜品总览_已停售Number.Text = "0";
+            // 
+            // label菜品总览_已停售
+            // 
+            this.label菜品总览_已停售.AutoSize = true;
+            this.label菜品总览_已停售.Location = new System.Drawing.Point(64, 55);
+            this.label菜品总览_已停售.Name = "label菜品总览_已停售";
+            this.label菜品总览_已停售.Size = new System.Drawing.Size(62, 18);
+            this.label菜品总览_已停售.TabIndex = 1;
+            this.label菜品总览_已停售.Text = "已停售";
+            // 
             // panel菜品总览_新增菜品
             // 
             this.panel菜品总览_新增菜品.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel菜品总览_新增菜品.Controls.Add(this.label新增菜品);
-            this.panel菜品总览_新增菜品.Controls.Add(this.pictureBox1);
+            this.panel菜品总览_新增菜品.Controls.Add(this.pictureBox新增菜品);
             this.panel菜品总览_新增菜品.Location = new System.Drawing.Point(548, 72);
             this.panel菜品总览_新增菜品.Name = "panel菜品总览_新增菜品";
             this.panel菜品总览_新增菜品.Size = new System.Drawing.Size(100, 100);
             this.panel菜品总览_新增菜品.TabIndex = 7;
+            // 
+            // label新增菜品
+            // 
+            this.label新增菜品.AutoSize = true;
+            this.label新增菜品.Location = new System.Drawing.Point(17, 65);
+            this.label新增菜品.Name = "label新增菜品";
+            this.label新增菜品.Size = new System.Drawing.Size(80, 18);
+            this.label新增菜品.TabIndex = 1;
+            this.label新增菜品.Text = "新增菜品";
             // 
             // panel菜品总览
             // 
@@ -373,6 +428,16 @@ namespace SkyTakeout_WinForm
             this.panel菜品总览.Size = new System.Drawing.Size(672, 220);
             this.panel菜品总览.TabIndex = 15;
             // 
+            // label菜品管理
+            // 
+            this.label菜品管理.AutoSize = true;
+            this.label菜品管理.Font = new System.Drawing.Font("宋体", 12F);
+            this.label菜品管理.Location = new System.Drawing.Point(491, 27);
+            this.label菜品管理.Name = "label菜品管理";
+            this.label菜品管理.Size = new System.Drawing.Size(106, 24);
+            this.label菜品管理.TabIndex = 12;
+            this.label菜品管理.Text = "菜品管理";
+            // 
             // panel套餐总览
             // 
             this.panel套餐总览.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -387,62 +452,15 @@ namespace SkyTakeout_WinForm
             this.panel套餐总览.Size = new System.Drawing.Size(663, 219);
             this.panel套餐总览.TabIndex = 16;
             // 
-            // label套餐总览
+            // label套餐管理
             // 
-            this.label套餐总览.AutoSize = true;
-            this.label套餐总览.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label套餐总览.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
-            this.label套餐总览.Location = new System.Drawing.Point(16, 19);
-            this.label套餐总览.Name = "label套餐总览";
-            this.label套餐总览.Size = new System.Drawing.Size(110, 31);
-            this.label套餐总览.TabIndex = 15;
-            this.label套餐总览.Text = "套餐总览";
-            // 
-            // label菜品总览_已起售
-            // 
-            this.label菜品总览_已起售.AutoSize = true;
-            this.label菜品总览_已起售.Location = new System.Drawing.Point(74, 55);
-            this.label菜品总览_已起售.Name = "label菜品总览_已起售";
-            this.label菜品总览_已起售.Size = new System.Drawing.Size(62, 18);
-            this.label菜品总览_已起售.TabIndex = 1;
-            this.label菜品总览_已起售.Text = "已启售";
-            // 
-            // label菜品总览_已起售Number
-            // 
-            this.label菜品总览_已起售Number.AutoSize = true;
-            this.label菜品总览_已起售Number.Location = new System.Drawing.Point(188, 55);
-            this.label菜品总览_已起售Number.Name = "label菜品总览_已起售Number";
-            this.label菜品总览_已起售Number.Size = new System.Drawing.Size(17, 18);
-            this.label菜品总览_已起售Number.TabIndex = 2;
-            this.label菜品总览_已起售Number.Text = "0";
-            // 
-            // label菜品总览_已停售
-            // 
-            this.label菜品总览_已停售.AutoSize = true;
-            this.label菜品总览_已停售.Location = new System.Drawing.Point(64, 55);
-            this.label菜品总览_已停售.Name = "label菜品总览_已停售";
-            this.label菜品总览_已停售.Size = new System.Drawing.Size(62, 18);
-            this.label菜品总览_已停售.TabIndex = 1;
-            this.label菜品总览_已停售.Text = "已停售";
-            // 
-            // label菜品总览_已停售Number
-            // 
-            this.label菜品总览_已停售Number.AutoSize = true;
-            this.label菜品总览_已停售Number.Location = new System.Drawing.Point(184, 57);
-            this.label菜品总览_已停售Number.Name = "label菜品总览_已停售Number";
-            this.label菜品总览_已停售Number.Size = new System.Drawing.Size(17, 18);
-            this.label菜品总览_已停售Number.TabIndex = 2;
-            this.label菜品总览_已停售Number.Text = "0";
-            // 
-            // label菜品管理
-            // 
-            this.label菜品管理.AutoSize = true;
-            this.label菜品管理.Font = new System.Drawing.Font("宋体", 12F);
-            this.label菜品管理.Location = new System.Drawing.Point(491, 27);
-            this.label菜品管理.Name = "label菜品管理";
-            this.label菜品管理.Size = new System.Drawing.Size(106, 24);
-            this.label菜品管理.TabIndex = 12;
-            this.label菜品管理.Text = "菜品管理";
+            this.label套餐管理.AutoSize = true;
+            this.label套餐管理.Font = new System.Drawing.Font("宋体", 12F);
+            this.label套餐管理.Location = new System.Drawing.Point(490, 23);
+            this.label套餐管理.Name = "label套餐管理";
+            this.label套餐管理.Size = new System.Drawing.Size(106, 24);
+            this.label套餐管理.TabIndex = 20;
+            this.label套餐管理.Text = "套餐管理";
             // 
             // panel套餐总览_已启售
             // 
@@ -473,6 +491,25 @@ namespace SkyTakeout_WinForm
             this.label套餐总览_已启售.TabIndex = 1;
             this.label套餐总览_已启售.Text = "已启售";
             // 
+            // panel套餐总览_新增套餐
+            // 
+            this.panel套餐总览_新增套餐.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel套餐总览_新增套餐.Controls.Add(this.label新增套餐);
+            this.panel套餐总览_新增套餐.Controls.Add(this.pictureBox新增套餐);
+            this.panel套餐总览_新增套餐.Location = new System.Drawing.Point(535, 71);
+            this.panel套餐总览_新增套餐.Name = "panel套餐总览_新增套餐";
+            this.panel套餐总览_新增套餐.Size = new System.Drawing.Size(100, 100);
+            this.panel套餐总览_新增套餐.TabIndex = 18;
+            // 
+            // label新增套餐
+            // 
+            this.label新增套餐.AutoSize = true;
+            this.label新增套餐.Location = new System.Drawing.Point(10, 68);
+            this.label新增套餐.Name = "label新增套餐";
+            this.label新增套餐.Size = new System.Drawing.Size(80, 18);
+            this.label新增套餐.TabIndex = 3;
+            this.label新增套餐.Text = "新增套餐";
+            // 
             // panel套餐总览_已停售
             // 
             this.panel套餐总览_已停售.BackColor = System.Drawing.Color.NavajoWhite;
@@ -502,25 +539,185 @@ namespace SkyTakeout_WinForm
             this.label套餐总览_已停售.TabIndex = 1;
             this.label套餐总览_已停售.Text = "已停售";
             // 
-            // panel套餐总览_新增套餐
+            // label套餐总览
             // 
-            this.panel套餐总览_新增套餐.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel套餐总览_新增套餐.Controls.Add(this.label新增套餐);
-            this.panel套餐总览_新增套餐.Controls.Add(this.pictureBox新增套餐);
-            this.panel套餐总览_新增套餐.Location = new System.Drawing.Point(535, 71);
-            this.panel套餐总览_新增套餐.Name = "panel套餐总览_新增套餐";
-            this.panel套餐总览_新增套餐.Size = new System.Drawing.Size(100, 100);
-            this.panel套餐总览_新增套餐.TabIndex = 18;
+            this.label套餐总览.AutoSize = true;
+            this.label套餐总览.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label套餐总览.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold);
+            this.label套餐总览.Location = new System.Drawing.Point(16, 19);
+            this.label套餐总览.Name = "label套餐总览";
+            this.label套餐总览.Size = new System.Drawing.Size(110, 31);
+            this.label套餐总览.TabIndex = 15;
+            this.label套餐总览.Text = "套餐总览";
             // 
-            // label套餐管理
+            // panel今日数据
             // 
-            this.label套餐管理.AutoSize = true;
-            this.label套餐管理.Font = new System.Drawing.Font("宋体", 12F);
-            this.label套餐管理.Location = new System.Drawing.Point(490, 23);
-            this.label套餐管理.Name = "label套餐管理";
-            this.label套餐管理.Size = new System.Drawing.Size(106, 24);
-            this.label套餐管理.TabIndex = 20;
-            this.label套餐管理.Text = "套餐管理";
+            this.panel今日数据.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel今日数据.Controls.Add(this.panel新增用户);
+            this.panel今日数据.Controls.Add(this.panel平均客单价);
+            this.panel今日数据.Controls.Add(this.panel有效订单);
+            this.panel今日数据.Controls.Add(this.panel订单完成率);
+            this.panel今日数据.Controls.Add(this.panel营业额);
+            this.panel今日数据.Controls.Add(this.label今日数据);
+            this.panel今日数据.Location = new System.Drawing.Point(22, 29);
+            this.panel今日数据.Name = "panel今日数据";
+            this.panel今日数据.Size = new System.Drawing.Size(1352, 220);
+            this.panel今日数据.TabIndex = 17;
+            // 
+            // panel新增用户
+            // 
+            this.panel新增用户.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel新增用户.Controls.Add(this.label新增用户Number);
+            this.panel新增用户.Controls.Add(this.label新增用户);
+            this.panel新增用户.Location = new System.Drawing.Point(1109, 78);
+            this.panel新增用户.Name = "panel新增用户";
+            this.panel新增用户.Size = new System.Drawing.Size(221, 121);
+            this.panel新增用户.TabIndex = 10;
+            // 
+            // label新增用户Number
+            // 
+            this.label新增用户Number.AutoSize = true;
+            this.label新增用户Number.ForeColor = System.Drawing.Color.Black;
+            this.label新增用户Number.Location = new System.Drawing.Point(11, 75);
+            this.label新增用户Number.Name = "label新增用户Number";
+            this.label新增用户Number.Size = new System.Drawing.Size(17, 18);
+            this.label新增用户Number.TabIndex = 3;
+            this.label新增用户Number.Text = "0";
+            // 
+            // label新增用户
+            // 
+            this.label新增用户.AutoSize = true;
+            this.label新增用户.Location = new System.Drawing.Point(11, 28);
+            this.label新增用户.Name = "label新增用户";
+            this.label新增用户.Size = new System.Drawing.Size(80, 18);
+            this.label新增用户.TabIndex = 2;
+            this.label新增用户.Text = "新增用户";
+            // 
+            // panel平均客单价
+            // 
+            this.panel平均客单价.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel平均客单价.Controls.Add(this.label平均客单价Number);
+            this.panel平均客单价.Controls.Add(this.label平均客单价);
+            this.panel平均客单价.Location = new System.Drawing.Point(829, 76);
+            this.panel平均客单价.Name = "panel平均客单价";
+            this.panel平均客单价.Size = new System.Drawing.Size(221, 121);
+            this.panel平均客单价.TabIndex = 9;
+            // 
+            // label平均客单价Number
+            // 
+            this.label平均客单价Number.AutoSize = true;
+            this.label平均客单价Number.ForeColor = System.Drawing.Color.Black;
+            this.label平均客单价Number.Location = new System.Drawing.Point(11, 75);
+            this.label平均客单价Number.Name = "label平均客单价Number";
+            this.label平均客单价Number.Size = new System.Drawing.Size(17, 18);
+            this.label平均客单价Number.TabIndex = 3;
+            this.label平均客单价Number.Text = "0";
+            // 
+            // label平均客单价
+            // 
+            this.label平均客单价.AutoSize = true;
+            this.label平均客单价.Location = new System.Drawing.Point(11, 28);
+            this.label平均客单价.Name = "label平均客单价";
+            this.label平均客单价.Size = new System.Drawing.Size(98, 18);
+            this.label平均客单价.TabIndex = 2;
+            this.label平均客单价.Text = "平均客单价";
+            // 
+            // panel有效订单
+            // 
+            this.panel有效订单.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel有效订单.Controls.Add(this.label有效订单Number);
+            this.panel有效订单.Controls.Add(this.label有效订单);
+            this.panel有效订单.Location = new System.Drawing.Point(285, 78);
+            this.panel有效订单.Name = "panel有效订单";
+            this.panel有效订单.Size = new System.Drawing.Size(221, 121);
+            this.panel有效订单.TabIndex = 8;
+            // 
+            // label有效订单Number
+            // 
+            this.label有效订单Number.AutoSize = true;
+            this.label有效订单Number.ForeColor = System.Drawing.Color.Black;
+            this.label有效订单Number.Location = new System.Drawing.Point(11, 75);
+            this.label有效订单Number.Name = "label有效订单Number";
+            this.label有效订单Number.Size = new System.Drawing.Size(17, 18);
+            this.label有效订单Number.TabIndex = 3;
+            this.label有效订单Number.Text = "0";
+            // 
+            // label有效订单
+            // 
+            this.label有效订单.AutoSize = true;
+            this.label有效订单.Location = new System.Drawing.Point(11, 28);
+            this.label有效订单.Name = "label有效订单";
+            this.label有效订单.Size = new System.Drawing.Size(80, 18);
+            this.label有效订单.TabIndex = 2;
+            this.label有效订单.Text = "有效订单";
+            // 
+            // panel订单完成率
+            // 
+            this.panel订单完成率.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel订单完成率.Controls.Add(this.label订单完成率Number);
+            this.panel订单完成率.Controls.Add(this.label订单完成率);
+            this.panel订单完成率.Location = new System.Drawing.Point(563, 78);
+            this.panel订单完成率.Name = "panel订单完成率";
+            this.panel订单完成率.Size = new System.Drawing.Size(221, 121);
+            this.panel订单完成率.TabIndex = 7;
+            // 
+            // label订单完成率Number
+            // 
+            this.label订单完成率Number.AutoSize = true;
+            this.label订单完成率Number.ForeColor = System.Drawing.Color.Black;
+            this.label订单完成率Number.Location = new System.Drawing.Point(11, 75);
+            this.label订单完成率Number.Name = "label订单完成率Number";
+            this.label订单完成率Number.Size = new System.Drawing.Size(17, 18);
+            this.label订单完成率Number.TabIndex = 3;
+            this.label订单完成率Number.Text = "0";
+            // 
+            // label订单完成率
+            // 
+            this.label订单完成率.AutoSize = true;
+            this.label订单完成率.Location = new System.Drawing.Point(11, 28);
+            this.label订单完成率.Name = "label订单完成率";
+            this.label订单完成率.Size = new System.Drawing.Size(98, 18);
+            this.label订单完成率.TabIndex = 2;
+            this.label订单完成率.Text = "订单完成率";
+            // 
+            // panel营业额
+            // 
+            this.panel营业额.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel营业额.Controls.Add(this.label营业额Number);
+            this.panel营业额.Controls.Add(this.label营业额);
+            this.panel营业额.Location = new System.Drawing.Point(25, 76);
+            this.panel营业额.Name = "panel营业额";
+            this.panel营业额.Size = new System.Drawing.Size(221, 121);
+            this.panel营业额.TabIndex = 6;
+            // 
+            // label营业额Number
+            // 
+            this.label营业额Number.AutoSize = true;
+            this.label营业额Number.ForeColor = System.Drawing.Color.Black;
+            this.label营业额Number.Location = new System.Drawing.Point(11, 75);
+            this.label营业额Number.Name = "label营业额Number";
+            this.label营业额Number.Size = new System.Drawing.Size(17, 18);
+            this.label营业额Number.TabIndex = 3;
+            this.label营业额Number.Text = "0";
+            // 
+            // label营业额
+            // 
+            this.label营业额.AutoSize = true;
+            this.label营业额.Location = new System.Drawing.Point(11, 28);
+            this.label营业额.Name = "label营业额";
+            this.label营业额.Size = new System.Drawing.Size(62, 18);
+            this.label营业额.TabIndex = 2;
+            this.label营业额.Text = "营业额";
+            // 
+            // label今日数据
+            // 
+            this.label今日数据.AutoSize = true;
+            this.label今日数据.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label今日数据.Location = new System.Drawing.Point(19, 17);
+            this.label今日数据.Name = "label今日数据";
+            this.label今日数据.Size = new System.Drawing.Size(110, 31);
+            this.label今日数据.TabIndex = 1;
+            this.label今日数据.Text = "今日数据";
             // 
             // pictureBox套餐管理
             // 
@@ -542,6 +739,16 @@ namespace SkyTakeout_WinForm
             this.pictureBox套餐总览_已启售.TabIndex = 0;
             this.pictureBox套餐总览_已启售.TabStop = false;
             // 
+            // pictureBox新增套餐
+            // 
+            this.pictureBox新增套餐.Image = global::SkyTakeout_WinForm.Properties.Resources.加;
+            this.pictureBox新增套餐.Location = new System.Drawing.Point(23, 15);
+            this.pictureBox新增套餐.Name = "pictureBox新增套餐";
+            this.pictureBox新增套餐.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox新增套餐.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox新增套餐.TabIndex = 2;
+            this.pictureBox新增套餐.TabStop = false;
+            // 
             // pictureBox套餐总览_已停售
             // 
             this.pictureBox套餐总览_已停售.Image = global::SkyTakeout_WinForm.Properties.Resources.错;
@@ -562,6 +769,16 @@ namespace SkyTakeout_WinForm
             this.pictureBox菜品总览_已起售.TabIndex = 0;
             this.pictureBox菜品总览_已起售.TabStop = false;
             // 
+            // pictureBox新增菜品
+            // 
+            this.pictureBox新增菜品.Image = global::SkyTakeout_WinForm.Properties.Resources.加;
+            this.pictureBox新增菜品.Location = new System.Drawing.Point(24, 12);
+            this.pictureBox新增菜品.Name = "pictureBox新增菜品";
+            this.pictureBox新增菜品.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox新增菜品.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox新增菜品.TabIndex = 0;
+            this.pictureBox新增菜品.TabStop = false;
+            // 
             // pictureBox菜品总览_已停售
             // 
             this.pictureBox菜品总览_已停售.Image = global::SkyTakeout_WinForm.Properties.Resources.错;
@@ -572,16 +789,6 @@ namespace SkyTakeout_WinForm
             this.pictureBox菜品总览_已停售.TabIndex = 0;
             this.pictureBox菜品总览_已停售.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SkyTakeout_WinForm.Properties.Resources.加;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox菜品管理
             // 
             this.pictureBox菜品管理.Image = global::SkyTakeout_WinForm.Properties.Resources.展开_copy;
@@ -591,6 +798,16 @@ namespace SkyTakeout_WinForm
             this.pictureBox菜品管理.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox菜品管理.TabIndex = 11;
             this.pictureBox菜品管理.TabStop = false;
+            // 
+            // pictureBox订单明细
+            // 
+            this.pictureBox订单明细.Image = global::SkyTakeout_WinForm.Properties.Resources.展开_copy;
+            this.pictureBox订单明细.Location = new System.Drawing.Point(1291, 16);
+            this.pictureBox订单明细.Name = "pictureBox订单明细";
+            this.pictureBox订单明细.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox订单明细.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox订单明细.TabIndex = 24;
+            this.pictureBox订单明细.TabStop = false;
             // 
             // pictureBox9
             // 
@@ -646,223 +863,6 @@ namespace SkyTakeout_WinForm
             this.pictureBox待接单.TabIndex = 1;
             this.pictureBox待接单.TabStop = false;
             // 
-            // label新增菜品
-            // 
-            this.label新增菜品.AutoSize = true;
-            this.label新增菜品.Location = new System.Drawing.Point(17, 65);
-            this.label新增菜品.Name = "label新增菜品";
-            this.label新增菜品.Size = new System.Drawing.Size(80, 18);
-            this.label新增菜品.TabIndex = 1;
-            this.label新增菜品.Text = "新增菜品";
-            // 
-            // label新增套餐
-            // 
-            this.label新增套餐.AutoSize = true;
-            this.label新增套餐.Location = new System.Drawing.Point(10, 68);
-            this.label新增套餐.Name = "label新增套餐";
-            this.label新增套餐.Size = new System.Drawing.Size(80, 18);
-            this.label新增套餐.TabIndex = 3;
-            this.label新增套餐.Text = "新增套餐";
-            // 
-            // pictureBox新增套餐
-            // 
-            this.pictureBox新增套餐.Image = global::SkyTakeout_WinForm.Properties.Resources.加;
-            this.pictureBox新增套餐.Location = new System.Drawing.Point(23, 15);
-            this.pictureBox新增套餐.Name = "pictureBox新增套餐";
-            this.pictureBox新增套餐.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox新增套餐.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox新增套餐.TabIndex = 2;
-            this.pictureBox新增套餐.TabStop = false;
-            // 
-            // label订单明细
-            // 
-            this.label订单明细.AutoSize = true;
-            this.label订单明细.Font = new System.Drawing.Font("宋体", 12F);
-            this.label订单明细.Location = new System.Drawing.Point(1179, 23);
-            this.label订单明细.Name = "label订单明细";
-            this.label订单明细.Size = new System.Drawing.Size(106, 24);
-            this.label订单明细.TabIndex = 25;
-            this.label订单明细.Text = "订单明细";
-            // 
-            // pictureBox订单明细
-            // 
-            this.pictureBox订单明细.Image = global::SkyTakeout_WinForm.Properties.Resources.展开_copy;
-            this.pictureBox订单明细.Location = new System.Drawing.Point(1291, 16);
-            this.pictureBox订单明细.Name = "pictureBox订单明细";
-            this.pictureBox订单明细.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox订单明细.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox订单明细.TabIndex = 24;
-            this.pictureBox订单明细.TabStop = false;
-            // 
-            // panel今日数据
-            // 
-            this.panel今日数据.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel今日数据.Controls.Add(this.panel新增用户);
-            this.panel今日数据.Controls.Add(this.panel平均客单价);
-            this.panel今日数据.Controls.Add(this.panel有效订单);
-            this.panel今日数据.Controls.Add(this.panel订单完成率);
-            this.panel今日数据.Controls.Add(this.panel营业额);
-            this.panel今日数据.Controls.Add(this.label今日数据);
-            this.panel今日数据.Location = new System.Drawing.Point(22, 29);
-            this.panel今日数据.Name = "panel今日数据";
-            this.panel今日数据.Size = new System.Drawing.Size(1352, 220);
-            this.panel今日数据.TabIndex = 17;
-            // 
-            // label今日数据
-            // 
-            this.label今日数据.AutoSize = true;
-            this.label今日数据.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label今日数据.Location = new System.Drawing.Point(19, 17);
-            this.label今日数据.Name = "label今日数据";
-            this.label今日数据.Size = new System.Drawing.Size(110, 31);
-            this.label今日数据.TabIndex = 1;
-            this.label今日数据.Text = "今日数据";
-            // 
-            // panel营业额
-            // 
-            this.panel营业额.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel营业额.Controls.Add(this.label营业额Number);
-            this.panel营业额.Controls.Add(this.label营业额);
-            this.panel营业额.Location = new System.Drawing.Point(25, 76);
-            this.panel营业额.Name = "panel营业额";
-            this.panel营业额.Size = new System.Drawing.Size(221, 121);
-            this.panel营业额.TabIndex = 6;
-            // 
-            // label营业额Number
-            // 
-            this.label营业额Number.AutoSize = true;
-            this.label营业额Number.ForeColor = System.Drawing.Color.Black;
-            this.label营业额Number.Location = new System.Drawing.Point(11, 75);
-            this.label营业额Number.Name = "label营业额Number";
-            this.label营业额Number.Size = new System.Drawing.Size(17, 18);
-            this.label营业额Number.TabIndex = 3;
-            this.label营业额Number.Text = "0";
-            // 
-            // label营业额
-            // 
-            this.label营业额.AutoSize = true;
-            this.label营业额.Location = new System.Drawing.Point(11, 28);
-            this.label营业额.Name = "label营业额";
-            this.label营业额.Size = new System.Drawing.Size(62, 18);
-            this.label营业额.TabIndex = 2;
-            this.label营业额.Text = "营业额";
-            // 
-            // panel订单完成率
-            // 
-            this.panel订单完成率.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel订单完成率.Controls.Add(this.label订单完成率Number);
-            this.panel订单完成率.Controls.Add(this.label订单完成率);
-            this.panel订单完成率.Location = new System.Drawing.Point(563, 78);
-            this.panel订单完成率.Name = "panel订单完成率";
-            this.panel订单完成率.Size = new System.Drawing.Size(221, 121);
-            this.panel订单完成率.TabIndex = 7;
-            // 
-            // label订单完成率Number
-            // 
-            this.label订单完成率Number.AutoSize = true;
-            this.label订单完成率Number.ForeColor = System.Drawing.Color.Black;
-            this.label订单完成率Number.Location = new System.Drawing.Point(11, 75);
-            this.label订单完成率Number.Name = "label订单完成率Number";
-            this.label订单完成率Number.Size = new System.Drawing.Size(17, 18);
-            this.label订单完成率Number.TabIndex = 3;
-            this.label订单完成率Number.Text = "0";
-            // 
-            // label订单完成率
-            // 
-            this.label订单完成率.AutoSize = true;
-            this.label订单完成率.Location = new System.Drawing.Point(11, 28);
-            this.label订单完成率.Name = "label订单完成率";
-            this.label订单完成率.Size = new System.Drawing.Size(98, 18);
-            this.label订单完成率.TabIndex = 2;
-            this.label订单完成率.Text = "订单完成率";
-            // 
-            // panel有效订单
-            // 
-            this.panel有效订单.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel有效订单.Controls.Add(this.label有效订单Number);
-            this.panel有效订单.Controls.Add(this.label有效订单);
-            this.panel有效订单.Location = new System.Drawing.Point(285, 78);
-            this.panel有效订单.Name = "panel有效订单";
-            this.panel有效订单.Size = new System.Drawing.Size(221, 121);
-            this.panel有效订单.TabIndex = 8;
-            // 
-            // label有效订单Number
-            // 
-            this.label有效订单Number.AutoSize = true;
-            this.label有效订单Number.ForeColor = System.Drawing.Color.Black;
-            this.label有效订单Number.Location = new System.Drawing.Point(11, 75);
-            this.label有效订单Number.Name = "label有效订单Number";
-            this.label有效订单Number.Size = new System.Drawing.Size(17, 18);
-            this.label有效订单Number.TabIndex = 3;
-            this.label有效订单Number.Text = "0";
-            // 
-            // label有效订单
-            // 
-            this.label有效订单.AutoSize = true;
-            this.label有效订单.Location = new System.Drawing.Point(11, 28);
-            this.label有效订单.Name = "label有效订单";
-            this.label有效订单.Size = new System.Drawing.Size(80, 18);
-            this.label有效订单.TabIndex = 2;
-            this.label有效订单.Text = "有效订单";
-            // 
-            // panel平均客单价
-            // 
-            this.panel平均客单价.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel平均客单价.Controls.Add(this.label平均客单价Number);
-            this.panel平均客单价.Controls.Add(this.label平均客单价);
-            this.panel平均客单价.Location = new System.Drawing.Point(829, 76);
-            this.panel平均客单价.Name = "panel平均客单价";
-            this.panel平均客单价.Size = new System.Drawing.Size(221, 121);
-            this.panel平均客单价.TabIndex = 9;
-            // 
-            // label平均客单价Number
-            // 
-            this.label平均客单价Number.AutoSize = true;
-            this.label平均客单价Number.ForeColor = System.Drawing.Color.Black;
-            this.label平均客单价Number.Location = new System.Drawing.Point(11, 75);
-            this.label平均客单价Number.Name = "label平均客单价Number";
-            this.label平均客单价Number.Size = new System.Drawing.Size(17, 18);
-            this.label平均客单价Number.TabIndex = 3;
-            this.label平均客单价Number.Text = "0";
-            // 
-            // label平均客单价
-            // 
-            this.label平均客单价.AutoSize = true;
-            this.label平均客单价.Location = new System.Drawing.Point(11, 28);
-            this.label平均客单价.Name = "label平均客单价";
-            this.label平均客单价.Size = new System.Drawing.Size(98, 18);
-            this.label平均客单价.TabIndex = 2;
-            this.label平均客单价.Text = "平均客单价";
-            // 
-            // panel新增用户
-            // 
-            this.panel新增用户.BackColor = System.Drawing.Color.NavajoWhite;
-            this.panel新增用户.Controls.Add(this.label新增用户Number);
-            this.panel新增用户.Controls.Add(this.label新增用户);
-            this.panel新增用户.Location = new System.Drawing.Point(1109, 78);
-            this.panel新增用户.Name = "panel新增用户";
-            this.panel新增用户.Size = new System.Drawing.Size(221, 121);
-            this.panel新增用户.TabIndex = 10;
-            // 
-            // label新增用户Number
-            // 
-            this.label新增用户Number.AutoSize = true;
-            this.label新增用户Number.ForeColor = System.Drawing.Color.Black;
-            this.label新增用户Number.Location = new System.Drawing.Point(11, 75);
-            this.label新增用户Number.Name = "label新增用户Number";
-            this.label新增用户Number.Size = new System.Drawing.Size(17, 18);
-            this.label新增用户Number.TabIndex = 3;
-            this.label新增用户Number.Text = "0";
-            // 
-            // label新增用户
-            // 
-            this.label新增用户.AutoSize = true;
-            this.label新增用户.Location = new System.Drawing.Point(11, 28);
-            this.label新增用户.Name = "label新增用户";
-            this.label新增用户.Size = new System.Drawing.Size(80, 18);
-            this.label新增用户.TabIndex = 2;
-            this.label新增用户.Text = "新增用户";
-            // 
             // UcDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -898,36 +898,36 @@ namespace SkyTakeout_WinForm
             this.panel套餐总览.PerformLayout();
             this.panel套餐总览_已启售.ResumeLayout(false);
             this.panel套餐总览_已启售.PerformLayout();
-            this.panel套餐总览_已停售.ResumeLayout(false);
-            this.panel套餐总览_已停售.PerformLayout();
             this.panel套餐总览_新增套餐.ResumeLayout(false);
             this.panel套餐总览_新增套餐.PerformLayout();
+            this.panel套餐总览_已停售.ResumeLayout(false);
+            this.panel套餐总览_已停售.PerformLayout();
+            this.panel今日数据.ResumeLayout(false);
+            this.panel今日数据.PerformLayout();
+            this.panel新增用户.ResumeLayout(false);
+            this.panel新增用户.PerformLayout();
+            this.panel平均客单价.ResumeLayout(false);
+            this.panel平均客单价.PerformLayout();
+            this.panel有效订单.ResumeLayout(false);
+            this.panel有效订单.PerformLayout();
+            this.panel订单完成率.ResumeLayout(false);
+            this.panel订单完成率.PerformLayout();
+            this.panel营业额.ResumeLayout(false);
+            this.panel营业额.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox套餐管理)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox套餐总览_已启售)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox新增套餐)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox套餐总览_已停售)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox菜品总览_已起售)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox新增菜品)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox菜品总览_已停售)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox菜品管理)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox订单明细)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox已取消)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox已完成)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox待派送)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox待接单)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox新增套餐)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox订单明细)).EndInit();
-            this.panel今日数据.ResumeLayout(false);
-            this.panel今日数据.PerformLayout();
-            this.panel营业额.ResumeLayout(false);
-            this.panel营业额.PerformLayout();
-            this.panel订单完成率.ResumeLayout(false);
-            this.panel订单完成率.PerformLayout();
-            this.panel有效订单.ResumeLayout(false);
-            this.panel有效订单.PerformLayout();
-            this.panel平均客单价.ResumeLayout(false);
-            this.panel平均客单价.PerformLayout();
-            this.panel新增用户.ResumeLayout(false);
-            this.panel新增用户.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -982,7 +982,7 @@ namespace SkyTakeout_WinForm
         private System.Windows.Forms.Panel panel套餐总览_新增套餐;
         private System.Windows.Forms.Label label套餐管理;
         private System.Windows.Forms.PictureBox pictureBox套餐管理;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox新增菜品;
         private System.Windows.Forms.Label label新增菜品;
         private System.Windows.Forms.Label label新增套餐;
         private System.Windows.Forms.PictureBox pictureBox新增套餐;

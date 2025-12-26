@@ -20,6 +20,8 @@ namespace SkyTakeout_WinForm
         private int totalCount = 0;
         private bool suppressFilterReload = false;
         private bool isCategoryChangeSubscribed = false;
+        private UcDishEdit editPage;
+        private int? editingDishId;
 
         public UcDishManage()
         {
@@ -64,11 +66,125 @@ namespace SkyTakeout_WinForm
 
             if (InvokeRequired)
             {
-                BeginInvoke(new Action(() => LoadCategoryOptions(true)));
+                BeginInvoke(new Action(() =>
+                {
+                    LoadCategoryOptions(true);
+                    RefreshEditPageCategoryOptions();
+                }));
                 return;
             }
 
             LoadCategoryOptions(true);
+            RefreshEditPageCategoryOptions();
+        }
+
+        private void EnsureEditPage()
+        {
+            if (editPage != null)
+            {
+                return;
+            }
+
+            editPage = new UcDishEdit();
+            editPage.Visible = false;
+            editPage.CancelRequested += () => ShowListPage(false, false);
+            editPage.SaveRequested += EditPage_SaveRequested;
+            Controls.Add(editPage);
+            editPage.BringToFront();
+        }
+
+        private void ShowAddPage()
+        {
+            EnsureEditPage();
+            editingDishId = null;
+            editPage.EnterAddMode(GetCategoryOptionsForEdit());
+            panelRoot.Visible = false;
+            editPage.Visible = true;
+            editPage.BringToFront();
+        }
+
+        internal void OpenAddPageFromDashboard()
+        {
+            ShowAddPage();
+        }
+
+        private void ShowEditPage(DishRow row)
+        {
+            if (row == null)
+            {
+                return;
+            }
+
+            EnsureEditPage();
+            editingDishId = row.Id;
+
+            List<string> categories = GetCategoryOptionsForEdit();
+            string priceText = (row.PriceText ?? string.Empty).Replace("元", string.Empty).Trim();
+            DishEditModel model = new DishEditModel(row.Name, row.Category, priceText, row.ImagePath, row.Enabled ? "启售" : "停售");
+            editPage.EnterEditMode(model, categories);
+            editPage.SetTastes(QueryDishFlavorValues(row.Id));
+            panelRoot.Visible = false;
+            editPage.Visible = true;
+            editPage.BringToFront();
+        }
+
+        private void ShowListPage(bool reload, bool resetPage)
+        {
+            editingDishId = null;
+            if (editPage != null)
+            {
+                editPage.Visible = false;
+            }
+
+            panelRoot.Visible = true;
+            panelRoot.BringToFront();
+
+            if (reload)
+            {
+                ReloadFromDatabase(resetPage);
+            }
+        }
+
+        private void EditPage_SaveRequested(DishEditResult result)
+        {
+            try
+            {
+                if (result == null)
+                {
+                    return;
+                }
+
+                if (editingDishId.HasValue)
+                {
+                    UpdateDish(editingDishId.Value, result.Name, result.Category, result.PriceText, result.ImagePath, result.StatusText);
+                    ReplaceDishFlavors(editingDishId.Value, result.Tastes);
+                    LoadCategoryOptions();
+                    ShowListPage(true, false);
+                    return;
+                }
+
+                int newId = InsertDish(result.Name, result.Category, result.PriceText, result.ImagePath, result.StatusText);
+                if (newId > 0)
+                {
+                    ReplaceDishFlavors(newId, result.Tastes);
+                }
+                LoadCategoryOptions();
+                ShowListPage(true, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("保存失败：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RefreshEditPageCategoryOptions()
+        {
+            if (editPage == null || !editPage.Visible)
+            {
+                return;
+            }
+
+            editPage.UpdateCategoryOptions(GetCategoryOptionsForEdit());
         }
 
         private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,15 +236,7 @@ namespace SkyTakeout_WinForm
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            DishEditForm form = new DishEditForm("新增菜品", GetCategoryOptionsForEdit(), null);
-            if (form.ShowDialog(this) != DialogResult.OK)
-            {
-                return;
-            }
-
-            InsertDish(form.DishName, form.Category, form.PriceText, form.ImagePath, form.StatusText);
-            LoadCategoryOptions();
-            ReloadFromDatabase(true);
+            ShowAddPage();
         }
 
         private void buttonBatchDelete_Click(object sender, EventArgs e)
@@ -200,15 +308,7 @@ namespace SkyTakeout_WinForm
 
             if (e.ColumnIndex == colEdit.Index)
             {
-                DishEditForm form = new DishEditForm("修改菜品", GetCategoryOptionsForEdit(), model);
-                if (form.ShowDialog(this) != DialogResult.OK)
-                {
-                    return;
-                }
-
-                UpdateDish(model.Id, form.DishName, form.Category, form.PriceText, form.ImagePath, form.StatusText);
-                LoadCategoryOptions();
-                ReloadFromDatabase(false);
+                ShowEditPage(model);
                 return;
             }
 
@@ -511,6 +611,17 @@ OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY
                     {
                         for (int i = 0; i < ids.Count; i++)
                         {
+                            using (SqlCommand delFlavor = new SqlCommand(@"
+IF OBJECT_ID('dbo.[dish_flavor]', 'U') IS NOT NULL
+BEGIN
+    DELETE FROM dbo.[dish_flavor] WHERE [dish_id]=@dishId;
+END
+", conn, tx))
+                            {
+                                delFlavor.Parameters.Add("@dishId", SqlDbType.BigInt).Value = ids[i];
+                                delFlavor.ExecuteNonQuery();
+                            }
+
                             using (SqlCommand cmd = new SqlCommand("DELETE FROM dbo.[dish] WHERE [id]=@id", conn, tx))
                             {
                                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = ids[i];
@@ -529,7 +640,7 @@ OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY
             }
         }
 
-        private void InsertDish(string name, string category, string priceText, string imagePath, string statusText)
+        private int InsertDish(string name, string category, string priceText, string imagePath, string statusText)
         {
             string safeName = TruncateByColumnLen("name", (name ?? string.Empty).Trim());
             string safeCategory = TruncateByColumnLen("category", (category ?? string.Empty).Trim());
@@ -541,6 +652,7 @@ OFFSET @offset ROWS FETCH NEXT @pageSize ROWS ONLY
             using (SqlCommand cmd = new SqlCommand(@"
 INSERT INTO dbo.[dish]([name],[image],[price],[ceate_time],[update_time],[category],[status])
 VALUES(@name,@image,@price,@createTime,@updateTime,@category,@status)
+SELECT CAST(SCOPE_IDENTITY() AS int);
 ", conn))
             {
                 cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = safeName;
@@ -552,8 +664,15 @@ VALUES(@name,@image,@price,@createTime,@updateTime,@category,@status)
                 cmd.Parameters.Add("@updateTime", SqlDbType.Time).Value = DateTime.Now.TimeOfDay;
 
                 conn.Open();
-                cmd.ExecuteNonQuery();
+                object scalar = cmd.ExecuteScalar();
+                int id;
+                if (scalar != null && int.TryParse(Convert.ToString(scalar), out id))
+                {
+                    return id;
+                }
             }
+
+            return 0;
         }
 
         private void UpdateDish(int id, string name, string category, string priceText, string imagePath, string statusText)
@@ -587,6 +706,113 @@ WHERE [id]=@id
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void EnsureDishFlavorTable()
+        {
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            using (SqlCommand cmd = new SqlCommand(@"
+IF OBJECT_ID('dbo.[dish_flavor]', 'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.[dish_flavor](
+        [id] BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+        [dish_id] BIGINT NOT NULL,
+        [name] VARCHAR(32) NOT NULL,
+        [value] VARCHAR(255) NOT NULL
+    );
+END
+", conn))
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void ReplaceDishFlavors(int dishId, List<string> values)
+        {
+            EnsureDishFlavorTable();
+
+            List<string> list = values ?? new List<string>();
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            {
+                conn.Open();
+                using (SqlTransaction tx = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        using (SqlCommand del = new SqlCommand("DELETE FROM dbo.[dish_flavor] WHERE [dish_id]=@dishId", conn, tx))
+                        {
+                            del.Parameters.Add("@dishId", SqlDbType.BigInt).Value = dishId;
+                            del.ExecuteNonQuery();
+                        }
+
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            string v = (list[i] ?? string.Empty).Trim();
+                            if (string.IsNullOrWhiteSpace(v))
+                            {
+                                continue;
+                            }
+
+                            if (v.Length > 255)
+                            {
+                                v = v.Substring(0, 255);
+                            }
+
+                            using (SqlCommand ins = new SqlCommand("INSERT INTO dbo.[dish_flavor]([dish_id],[name],[value]) VALUES(@dishId,@name,@value)", conn, tx))
+                            {
+                                ins.Parameters.Add("@dishId", SqlDbType.BigInt).Value = dishId;
+                                ins.Parameters.Add("@name", SqlDbType.VarChar, 32).Value = "口味";
+                                ins.Parameters.Add("@value", SqlDbType.VarChar, 255).Value = v;
+                                ins.ExecuteNonQuery();
+                            }
+                        }
+
+                        tx.Commit();
+                    }
+                    catch
+                    {
+                        tx.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+
+        private List<string> QueryDishFlavorValues(int dishId)
+        {
+            List<string> result = new List<string>();
+            using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+            using (SqlCommand cmd = new SqlCommand(@"
+IF OBJECT_ID('dbo.[dish_flavor]', 'U') IS NULL
+BEGIN
+    SELECT CAST(NULL AS varchar(255)) AS [value] WHERE 1=0;
+END
+ELSE
+BEGIN
+    SELECT [value]
+    FROM dbo.[dish_flavor]
+    WHERE [dish_id]=@dishId
+    ORDER BY [id] ASC;
+END
+", conn))
+            {
+                cmd.Parameters.Add("@dishId", SqlDbType.BigInt).Value = dishId;
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string v = reader.IsDBNull(0) ? string.Empty : Convert.ToString(reader.GetValue(0));
+                        v = (v ?? string.Empty).Trim();
+                        if (!string.IsNullOrWhiteSpace(v))
+                        {
+                            result.Add(v);
+                        }
+                    }
+                }
+            }
+            return result;
         }
 
         private string NormalizePriceForDb(string priceText)

@@ -1,4 +1,4 @@
-﻿namespace SkyTakeout_WinForm
+namespace SkyTakeout_WinForm
 {
     partial class FormLogin
     {
@@ -153,7 +153,7 @@
             this.ClientSize = new System.Drawing.Size(1167, 669);
             this.Controls.Add(this.panelBack);
             this.Name = "FormLogin";
-            this.Text = "Form1";
+            this.Text = "登录";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();

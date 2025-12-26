@@ -88,6 +88,9 @@
     <Compile Include="UcDishManage.Designer.cs">
       <DependentUpon>UcDishManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcDishEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UcCategoryManage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +123,12 @@
     <Compile Include="UcEmployeeEdit.Designer.cs">
       <DependentUpon>UcEmployeeEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStatistics.Designer.cs">
+      <DependentUpon>UcStatistics.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +142,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcDishEdit.resx">
+      <DependentUpon>UcDishEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcDishManage.resx">
       <DependentUpon>UcDishManage.cs</DependentUpon>
@@ -151,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcEmployeeEdit.resx">
       <DependentUpon>UcEmployeeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcStatistics.resx">
+      <DependentUpon>UcStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -206,6 +221,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\加.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\404-cloud.0f4bc32b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noImg.89ccbe0c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_table_empty.e769fc3e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -268,8 +268,8 @@ namespace SkyTakeout_WinForm
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(247)))));
-            this.panelContent.Controls.Add(this.panelContentPlaceholderCard);
             this.panelContent.Controls.Add(this.labelContentTitle);
+            this.panelContent.Controls.Add(this.panelContentPlaceholderCard);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(180, 64);
             this.panelContent.Name = "panelContent";
@@ -305,10 +305,10 @@ namespace SkyTakeout_WinForm
             this.labelContentTitle.AutoSize = true;
             this.labelContentTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelContentTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.labelContentTitle.Location = new System.Drawing.Point(19, 36);
+            this.labelContentTitle.Location = new System.Drawing.Point(35, 39);
             this.labelContentTitle.Name = "labelContentTitle";
             this.labelContentTitle.Size = new System.Drawing.Size(128, 47);
-            this.labelContentTitle.TabIndex = 0;
+            this.labelContentTitle.TabIndex = 2;
             this.labelContentTitle.Text = "工作台";
             // 
             // FormMain

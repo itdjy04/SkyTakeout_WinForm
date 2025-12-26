@@ -23,6 +23,7 @@ namespace SkyTakeout_WinForm
         public FormMain(int userId, string username)
         {
             InitializeComponent();
+            AppIcon.Apply(this);
             MinimumSize = new Size(1100, 700);
             Load += FormMain_Load;
             currentUserId = userId;
@@ -149,13 +150,81 @@ WHERE [id] = @id AND RTRIM([password]) = @oldPwd
             }
             else
             {
-                labelContentPlaceholder.Text = "此模块待实现：" + pageName;
-                labelContentPlaceholder.Location = new Point(16, 18);
-                panelContentPlaceholderCard.Controls.Add(labelContentPlaceholder);
+                if (string.Equals(pageName, "订单管理", StringComparison.OrdinalIgnoreCase))
+                {
+                    Panel placeholder = new Panel
+                    {
+                        Dock = DockStyle.Fill,
+                        BackColor = Color.White
+                    };
+
+                    PictureBox picture = new PictureBox
+                    {
+                        Image = Properties.Resources._404_cloud_0f4bc32b,
+                        SizeMode = PictureBoxSizeMode.Zoom,
+                        Size = new Size(360, 240)
+                    };
+
+                    Label label = new Label
+                    {
+                        AutoSize = true,
+                        Font = new Font("Microsoft YaHei UI", 10F),
+                        ForeColor = Color.FromArgb(96, 98, 102),
+                        Text = "订单管理：本实训先用占位图展示，后续可再补功能。"
+                    };
+
+                    placeholder.Controls.Add(picture);
+                    placeholder.Controls.Add(label);
+
+                    placeholder.Resize += (s, e) =>
+                    {
+                        int totalHeight = picture.Height + 18 + label.Height;
+                        int startY = Math.Max(16, (placeholder.Height - totalHeight) / 2);
+                        picture.Location = new Point(Math.Max(16, (placeholder.Width - picture.Width) / 2), startY);
+                        label.Location = new Point(Math.Max(16, (placeholder.Width - label.Width) / 2), picture.Bottom + 18);
+                    };
+
+                    panelContentPlaceholderCard.Controls.Add(placeholder);
+                    placeholder.PerformLayout();
+                    placeholder.Invalidate();
+                }
+                else
+                {
+                    labelContentPlaceholder.Text = "此模块待实现：" + pageName;
+                    labelContentPlaceholder.Location = new Point(16, 18);
+                    panelContentPlaceholderCard.Controls.Add(labelContentPlaceholder);
+                }
             }
 
             panelContentPlaceholderCard.ResumeLayout();
             HighlightMenuButton(pageName);
+        }
+
+        internal void NavigateToFromDashboard(string pageName)
+        {
+            if (string.Equals(pageName, "新增菜品", StringComparison.OrdinalIgnoreCase))
+            {
+                NavigateTo("菜品管理");
+                Control page;
+                if (pages.TryGetValue("菜品管理", out page) && page is UcDishManage dishManage)
+                {
+                    dishManage.OpenAddPageFromDashboard();
+                }
+                return;
+            }
+
+            if (string.Equals(pageName, "新增套餐", StringComparison.OrdinalIgnoreCase))
+            {
+                NavigateTo("套餐管理");
+                Control page;
+                if (pages.TryGetValue("套餐管理", out page) && page is UcSetmealManage setmealManage)
+                {
+                    setmealManage.OpenAddPageFromDashboard();
+                }
+                return;
+            }
+
+            NavigateTo(pageName);
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
@@ -203,6 +272,10 @@ WHERE [id] = @id AND RTRIM([password]) = @oldPwd
             else if (string.Equals(pageName, "员工管理", StringComparison.OrdinalIgnoreCase))
             {
                 created = new UcEmployeeManage(currentUserId);
+            }
+            else if (string.Equals(pageName, "数据统计", StringComparison.OrdinalIgnoreCase))
+            {
+                created = new UcStatistics();
             }
             
             pages[pageName] = created;
@@ -258,6 +331,7 @@ WHERE [id] = @id AND RTRIM([password]) = @oldPwd
             public ChangePasswordForm()
             {
                 Text = "修改密码";
+                AppIcon.Apply(this);
                 StartPosition = FormStartPosition.CenterParent;
                 FormBorderStyle = FormBorderStyle.FixedDialog;
                 MaximizeBox = false;

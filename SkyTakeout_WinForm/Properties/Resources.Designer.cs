@@ -63,6 +63,36 @@ namespace SkyTakeout_WinForm.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _404_cloud_0f4bc32b {
+            get {
+                object obj = ResourceManager.GetObject("404-cloud.0f4bc32b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap favicon_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap favicon_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap icon_logo_38b01728 {
             get {
                 object obj = ResourceManager.GetObject("icon_logo.38b01728", resourceCulture);
@@ -76,6 +106,26 @@ namespace SkyTakeout_WinForm.Properties {
         internal static System.Drawing.Bitmap login_l_6ef9d260 {
             get {
                 object obj = ResourceManager.GetObject("login-l.6ef9d260", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap noImg_89ccbe0c {
+            get {
+                object obj = ResourceManager.GetObject("noImg.89ccbe0c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap search_table_empty_e769fc3e {
+            get {
+                object obj = ResourceManager.GetObject("search_table_empty.e769fc3e", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

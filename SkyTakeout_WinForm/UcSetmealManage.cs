@@ -82,6 +82,11 @@ namespace SkyTakeout_WinForm
             editPage.BringToFront();
         }
 
+        internal void OpenAddPageFromDashboard()
+        {
+            ShowAddPage();
+        }
+
         private void ShowEditPage(SetmealRow row)
         {
             if (row == null)
